@@ -21,11 +21,11 @@ mininet> xterm h1 h2
 
 4.In 'h1''s xterm, send a message from the client:
 ```
-./send.py 10.0.2.10 "P4 is cool"
+./send_ipv4_addr.py 10.0.2.10 "P4 is cool"
 ```
 or
 ```
-./send.py fe80::5678 "P4 is cool"
+./send_ipv6_addr.py fe80::5678 "P4 is cool"
 ```
 The message will be received.
 
