@@ -1,0 +1,1189 @@
+Calling target program-options parser
+[01:54:45.424] [bmv2] [D] [thread 3659] Set default entry for table 'ipv6_lpm': NoAction - 
+[01:54:45.424] [bmv2] [D] [thread 3659] Set default entry for table 'ipv4_lpm': NoAction - 
+Adding interface s1-eth1 as port 1
+[01:54:45.425] [bmv2] [D] [thread 3659] Adding interface s1-eth1 as port 1
+Adding interface s1-eth2 as port 2
+[01:54:45.488] [bmv2] [D] [thread 3659] Adding interface s1-eth2 as port 2
+Thrift server was started
+[01:54:45.865] [bmv2] [D] [thread 3665] [0.0] [cxt 0] Processing packet received on port 2
+[01:54:45.865] [bmv2] [D] [thread 3665] [0.0] [cxt 0] Parser 'parser': start
+[01:54:45.865] [bmv2] [D] [thread 3665] [0.0] [cxt 0] Extracting header 'ethernet'
+[01:54:45.865] [bmv2] [D] [thread 3665] [0.0] [cxt 0] Parser state 'start': key is 86dd
+[01:54:45.865] [bmv2] [T] [thread 3665] [0.0] [cxt 0] Bytes parsed: 14
+[01:54:45.865] [bmv2] [D] [thread 3665] [0.0] [cxt 0] Extracting header 'ipv10'
+[01:54:45.865] [bmv2] [D] [thread 3665] [0.0] [cxt 0] Parser set: setting field 'scalars.tmp_0' from lookahead (0, 32), new value is 4278321152
+[01:54:45.865] [bmv2] [D] [thread 3665] [0.0] [cxt 0] Parser state 'parse_ipv10': key is ff020000
+[01:54:45.865] [bmv2] [T] [thread 3665] [0.0] [cxt 0] Bytes parsed: 38
+[01:54:45.865] [bmv2] [D] [thread 3665] [0.0] [cxt 0] Extracting header 'ipv6_addr'
+[01:54:45.865] [bmv2] [D] [thread 3665] [0.0] [cxt 0] Parser state 'parse_ipv6_addr' has no switch, going to default next state
+[01:54:45.865] [bmv2] [T] [thread 3665] [0.0] [cxt 0] Bytes parsed: 54
+[01:54:45.865] [bmv2] [D] [thread 3665] [0.0] [cxt 0] Parser 'parser': end
+[01:54:45.865] [bmv2] [D] [thread 3665] [0.0] [cxt 0] Pipeline 'ingress': start
+[01:54:45.865] [bmv2] [T] [thread 3665] [0.0] [cxt 0] ipv10_forward.p4(153) Condition "hdr.ipv6_addr.isValid()" is true
+[01:54:45.865] [bmv2] [T] [thread 3665] [0.0] [cxt 0] Applying table 'ipv6_lpm'
+[01:54:45.865] [bmv2] [D] [thread 3665] [0.0] [cxt 0] Looking up key:
+* ipv6_addr.dstAddr   : ff020000000000000000000000000016
+
+[01:54:45.865] [bmv2] [D] [thread 3665] [0.0] [cxt 0] Table 'ipv6_lpm': miss
+[01:54:45.865] [bmv2] [D] [thread 3665] [0.0] [cxt 0] Action entry is NoAction - 
+[01:54:45.865] [bmv2] [T] [thread 3665] [0.0] [cxt 0] Action NoAction
+[01:54:45.865] [bmv2] [T] [thread 3665] [0.0] [cxt 0] ipv10_forward.p4(156) Condition "hdr.ipv4_addr.isValid()" is false
+[01:54:45.865] [bmv2] [D] [thread 3665] [0.0] [cxt 0] Pipeline 'ingress': end
+[01:54:45.865] [bmv2] [D] [thread 3665] [0.0] [cxt 0] Egress port is 0
+[01:54:45.865] [bmv2] [D] [thread 3665] [1.0] [cxt 0] Processing packet received on port 2
+[01:54:45.866] [bmv2] [D] [thread 3665] [1.0] [cxt 0] Parser 'parser': start
+[01:54:45.866] [bmv2] [D] [thread 3665] [1.0] [cxt 0] Extracting header 'ethernet'
+[01:54:45.866] [bmv2] [D] [thread 3665] [1.0] [cxt 0] Parser state 'start': key is 86dd
+[01:54:45.866] [bmv2] [T] [thread 3665] [1.0] [cxt 0] Bytes parsed: 14
+[01:54:45.866] [bmv2] [D] [thread 3665] [1.0] [cxt 0] Extracting header 'ipv10'
+[01:54:45.866] [bmv2] [D] [thread 3665] [1.0] [cxt 0] Parser set: setting field 'scalars.tmp_0' from lookahead (0, 32), new value is 4278321152
+[01:54:45.866] [bmv2] [D] [thread 3665] [1.0] [cxt 0] Parser state 'parse_ipv10': key is ff020000
+[01:54:45.866] [bmv2] [T] [thread 3665] [1.0] [cxt 0] Bytes parsed: 38
+[01:54:45.866] [bmv2] [D] [thread 3665] [1.0] [cxt 0] Extracting header 'ipv6_addr'
+[01:54:45.866] [bmv2] [D] [thread 3665] [1.0] [cxt 0] Parser state 'parse_ipv6_addr' has no switch, going to default next state
+[01:54:45.866] [bmv2] [T] [thread 3665] [1.0] [cxt 0] Bytes parsed: 54
+[01:54:45.866] [bmv2] [D] [thread 3665] [1.0] [cxt 0] Parser 'parser': end
+[01:54:45.866] [bmv2] [D] [thread 3665] [1.0] [cxt 0] Pipeline 'ingress': start
+[01:54:45.866] [bmv2] [D] [thread 3666] [0.0] [cxt 0] Pipeline 'egress': start
+[01:54:45.866] [bmv2] [D] [thread 3666] [0.0] [cxt 0] Pipeline 'egress': end
+[01:54:45.866] [bmv2] [D] [thread 3666] [0.0] [cxt 0] Deparser 'deparser': start
+[01:54:45.866] [bmv2] [D] [thread 3666] [0.0] [cxt 0] Deparsing header 'ethernet'
+[01:54:45.866] [bmv2] [T] [thread 3665] [1.0] [cxt 0] ipv10_forward.p4(153) Condition "hdr.ipv6_addr.isValid()" is true
+[01:54:45.866] [bmv2] [T] [thread 3665] [1.0] [cxt 0] Applying table 'ipv6_lpm'
+[01:54:45.866] [bmv2] [D] [thread 3666] [0.0] [cxt 0] Deparsing header 'ipv10'
+[01:54:45.866] [bmv2] [D] [thread 3666] [0.0] [cxt 0] Deparsing header 'ipv6_addr'
+[01:54:45.866] [bmv2] [D] [thread 3666] [0.0] [cxt 0] Deparser 'deparser': end
+[01:54:45.866] [bmv2] [D] [thread 3665] [1.0] [cxt 0] Looking up key:
+* ipv6_addr.dstAddr   : ff020000000000000000000000000002
+
+[01:54:45.866] [bmv2] [D] [thread 3665] [1.0] [cxt 0] Table 'ipv6_lpm': miss
+[01:54:45.866] [bmv2] [D] [thread 3665] [1.0] [cxt 0] Action entry is NoAction - 
+[01:54:45.866] [bmv2] [T] [thread 3665] [1.0] [cxt 0] Action NoAction
+[01:54:45.866] [bmv2] [T] [thread 3665] [1.0] [cxt 0] ipv10_forward.p4(156) Condition "hdr.ipv4_addr.isValid()" is false
+[01:54:45.866] [bmv2] [D] [thread 3665] [1.0] [cxt 0] Pipeline 'ingress': end
+[01:54:45.866] [bmv2] [D] [thread 3665] [1.0] [cxt 0] Egress port is 0
+[01:54:45.866] [bmv2] [D] [thread 3670] [0.0] [cxt 0] Transmitting packet of size 90 out of port 0
+[01:54:45.866] [bmv2] [D] [thread 3666] [1.0] [cxt 0] Pipeline 'egress': start
+[01:54:45.866] [bmv2] [D] [thread 3666] [1.0] [cxt 0] Pipeline 'egress': end
+[01:54:45.866] [bmv2] [D] [thread 3666] [1.0] [cxt 0] Deparser 'deparser': start
+[01:54:45.866] [bmv2] [D] [thread 3666] [1.0] [cxt 0] Deparsing header 'ethernet'
+[01:54:45.866] [bmv2] [D] [thread 3666] [1.0] [cxt 0] Deparsing header 'ipv10'
+[01:54:45.866] [bmv2] [D] [thread 3666] [1.0] [cxt 0] Deparsing header 'ipv6_addr'
+[01:54:45.866] [bmv2] [D] [thread 3666] [1.0] [cxt 0] Deparser 'deparser': end
+[01:54:45.866] [bmv2] [D] [thread 3670] [1.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[01:54:45.872] [bmv2] [D] [thread 3665] [2.0] [cxt 0] Processing packet received on port 1
+[01:54:45.873] [bmv2] [D] [thread 3665] [2.0] [cxt 0] Parser 'parser': start
+[01:54:45.873] [bmv2] [D] [thread 3665] [2.0] [cxt 0] Extracting header 'ethernet'
+[01:54:45.873] [bmv2] [D] [thread 3665] [2.0] [cxt 0] Parser state 'start': key is 86dd
+[01:54:45.873] [bmv2] [T] [thread 3665] [2.0] [cxt 0] Bytes parsed: 14
+[01:54:45.873] [bmv2] [D] [thread 3665] [2.0] [cxt 0] Extracting header 'ipv10'
+[01:54:45.873] [bmv2] [D] [thread 3665] [2.0] [cxt 0] Parser set: setting field 'scalars.tmp_0' from lookahead (0, 32), new value is 4278321152
+[01:54:45.873] [bmv2] [D] [thread 3665] [2.0] [cxt 0] Parser state 'parse_ipv10': key is ff020000
+[01:54:45.873] [bmv2] [T] [thread 3665] [2.0] [cxt 0] Bytes parsed: 38
+[01:54:45.873] [bmv2] [D] [thread 3665] [2.0] [cxt 0] Extracting header 'ipv6_addr'
+[01:54:45.873] [bmv2] [D] [thread 3665] [2.0] [cxt 0] Parser state 'parse_ipv6_addr' has no switch, going to default next state
+[01:54:45.873] [bmv2] [T] [thread 3665] [2.0] [cxt 0] Bytes parsed: 54
+[01:54:45.873] [bmv2] [D] [thread 3665] [2.0] [cxt 0] Parser 'parser': end
+[01:54:45.873] [bmv2] [D] [thread 3665] [2.0] [cxt 0] Pipeline 'ingress': start
+[01:54:45.873] [bmv2] [T] [thread 3665] [2.0] [cxt 0] ipv10_forward.p4(153) Condition "hdr.ipv6_addr.isValid()" is true
+[01:54:45.873] [bmv2] [T] [thread 3665] [2.0] [cxt 0] Applying table 'ipv6_lpm'
+[01:54:45.873] [bmv2] [D] [thread 3665] [2.0] [cxt 0] Looking up key:
+* ipv6_addr.dstAddr   : ff020000000000000000000000000016
+
+[01:54:45.873] [bmv2] [D] [thread 3665] [2.0] [cxt 0] Table 'ipv6_lpm': miss
+[01:54:45.873] [bmv2] [D] [thread 3665] [2.0] [cxt 0] Action entry is NoAction - 
+[01:54:45.873] [bmv2] [T] [thread 3665] [2.0] [cxt 0] Action NoAction
+[01:54:45.873] [bmv2] [T] [thread 3665] [2.0] [cxt 0] ipv10_forward.p4(156) Condition "hdr.ipv4_addr.isValid()" is false
+[01:54:45.873] [bmv2] [D] [thread 3665] [2.0] [cxt 0] Pipeline 'ingress': end
+[01:54:45.873] [bmv2] [D] [thread 3665] [2.0] [cxt 0] Egress port is 0
+[01:54:45.873] [bmv2] [D] [thread 3665] [3.0] [cxt 0] Processing packet received on port 2
+[01:54:45.873] [bmv2] [D] [thread 3665] [3.0] [cxt 0] Parser 'parser': start
+[01:54:45.873] [bmv2] [D] [thread 3665] [3.0] [cxt 0] Extracting header 'ethernet'
+[01:54:45.873] [bmv2] [D] [thread 3665] [3.0] [cxt 0] Parser state 'start': key is 86dd
+[01:54:45.873] [bmv2] [T] [thread 3665] [3.0] [cxt 0] Bytes parsed: 14
+[01:54:45.873] [bmv2] [D] [thread 3665] [3.0] [cxt 0] Extracting header 'ipv10'
+[01:54:45.873] [bmv2] [D] [thread 3666] [2.0] [cxt 0] Pipeline 'egress': start
+[01:54:45.873] [bmv2] [D] [thread 3666] [2.0] [cxt 0] Pipeline 'egress': end
+[01:54:45.873] [bmv2] [D] [thread 3666] [2.0] [cxt 0] Deparser 'deparser': start
+[01:54:45.873] [bmv2] [D] [thread 3666] [2.0] [cxt 0] Deparsing header 'ethernet'
+[01:54:45.873] [bmv2] [D] [thread 3666] [2.0] [cxt 0] Deparsing header 'ipv10'
+[01:54:45.873] [bmv2] [D] [thread 3666] [2.0] [cxt 0] Deparsing header 'ipv6_addr'
+[01:54:45.874] [bmv2] [D] [thread 3666] [2.0] [cxt 0] Deparser 'deparser': end
+[01:54:45.874] [bmv2] [D] [thread 3670] [2.0] [cxt 0] Transmitting packet of size 90 out of port 0
+[01:54:45.873] [bmv2] [D] [thread 3665] [3.0] [cxt 0] Parser set: setting field 'scalars.tmp_0' from lookahead (0, 32), new value is 4278321152
+[01:54:45.874] [bmv2] [D] [thread 3665] [3.0] [cxt 0] Parser state 'parse_ipv10': key is ff020000
+[01:54:45.874] [bmv2] [T] [thread 3665] [3.0] [cxt 0] Bytes parsed: 38
+[01:54:45.874] [bmv2] [D] [thread 3665] [3.0] [cxt 0] Extracting header 'ipv6_addr'
+[01:54:45.874] [bmv2] [D] [thread 3665] [3.0] [cxt 0] Parser state 'parse_ipv6_addr' has no switch, going to default next state
+[01:54:45.874] [bmv2] [T] [thread 3665] [3.0] [cxt 0] Bytes parsed: 54
+[01:54:45.874] [bmv2] [D] [thread 3665] [3.0] [cxt 0] Parser 'parser': end
+[01:54:45.874] [bmv2] [D] [thread 3665] [3.0] [cxt 0] Pipeline 'ingress': start
+[01:54:45.874] [bmv2] [T] [thread 3665] [3.0] [cxt 0] ipv10_forward.p4(153) Condition "hdr.ipv6_addr.isValid()" is true
+[01:54:45.874] [bmv2] [T] [thread 3665] [3.0] [cxt 0] Applying table 'ipv6_lpm'
+[01:54:45.874] [bmv2] [D] [thread 3665] [3.0] [cxt 0] Looking up key:
+* ipv6_addr.dstAddr   : ff020000000000000000000000000016
+
+[01:54:45.874] [bmv2] [D] [thread 3665] [3.0] [cxt 0] Table 'ipv6_lpm': miss
+[01:54:45.874] [bmv2] [D] [thread 3665] [3.0] [cxt 0] Action entry is NoAction - 
+[01:54:45.874] [bmv2] [T] [thread 3665] [3.0] [cxt 0] Action NoAction
+[01:54:45.874] [bmv2] [T] [thread 3665] [3.0] [cxt 0] ipv10_forward.p4(156) Condition "hdr.ipv4_addr.isValid()" is false
+[01:54:45.874] [bmv2] [D] [thread 3665] [3.0] [cxt 0] Pipeline 'ingress': end
+[01:54:45.874] [bmv2] [D] [thread 3665] [3.0] [cxt 0] Egress port is 0
+[01:54:45.874] [bmv2] [D] [thread 3665] [4.0] [cxt 0] Processing packet received on port 1
+[01:54:45.874] [bmv2] [D] [thread 3665] [4.0] [cxt 0] Parser 'parser': start
+[01:54:45.874] [bmv2] [D] [thread 3665] [4.0] [cxt 0] Extracting header 'ethernet'
+[01:54:45.874] [bmv2] [D] [thread 3665] [4.0] [cxt 0] Parser state 'start': key is 86dd
+[01:54:45.874] [bmv2] [T] [thread 3665] [4.0] [cxt 0] Bytes parsed: 14
+[01:54:45.874] [bmv2] [D] [thread 3666] [3.0] [cxt 0] Pipeline 'egress': start
+[01:54:45.874] [bmv2] [D] [thread 3665] [4.0] [cxt 0] Extracting header 'ipv10'
+[01:54:45.874] [bmv2] [D] [thread 3666] [3.0] [cxt 0] Pipeline 'egress': end
+[01:54:45.874] [bmv2] [D] [thread 3666] [3.0] [cxt 0] Deparser 'deparser': start
+[01:54:45.874] [bmv2] [D] [thread 3665] [4.0] [cxt 0] Parser set: setting field 'scalars.tmp_0' from lookahead (0, 32), new value is 4278321152
+[01:54:45.874] [bmv2] [D] [thread 3665] [4.0] [cxt 0] Parser state 'parse_ipv10': key is ff020000
+[01:54:45.874] [bmv2] [T] [thread 3665] [4.0] [cxt 0] Bytes parsed: 38
+[01:54:45.874] [bmv2] [D] [thread 3665] [4.0] [cxt 0] Extracting header 'ipv6_addr'
+[01:54:45.874] [bmv2] [D] [thread 3665] [4.0] [cxt 0] Parser state 'parse_ipv6_addr' has no switch, going to default next state
+[01:54:45.874] [bmv2] [T] [thread 3665] [4.0] [cxt 0] Bytes parsed: 54
+[01:54:45.874] [bmv2] [D] [thread 3665] [4.0] [cxt 0] Parser 'parser': end
+[01:54:45.874] [bmv2] [D] [thread 3665] [4.0] [cxt 0] Pipeline 'ingress': start
+[01:54:45.874] [bmv2] [T] [thread 3665] [4.0] [cxt 0] ipv10_forward.p4(153) Condition "hdr.ipv6_addr.isValid()" is true
+[01:54:45.874] [bmv2] [T] [thread 3665] [4.0] [cxt 0] Applying table 'ipv6_lpm'
+[01:54:45.874] [bmv2] [D] [thread 3666] [3.0] [cxt 0] Deparsing header 'ethernet'
+[01:54:45.874] [bmv2] [D] [thread 3666] [3.0] [cxt 0] Deparsing header 'ipv10'
+[01:54:45.874] [bmv2] [D] [thread 3666] [3.0] [cxt 0] Deparsing header 'ipv6_addr'
+[01:54:45.874] [bmv2] [D] [thread 3666] [3.0] [cxt 0] Deparser 'deparser': end
+[01:54:45.874] [bmv2] [D] [thread 3665] [4.0] [cxt 0] Looking up key:
+* ipv6_addr.dstAddr   : ff020000000000000000000000000002
+
+[01:54:45.874] [bmv2] [D] [thread 3670] [3.0] [cxt 0] Transmitting packet of size 90 out of port 0
+[01:54:45.874] [bmv2] [D] [thread 3665] [4.0] [cxt 0] Table 'ipv6_lpm': miss
+[01:54:45.874] [bmv2] [D] [thread 3665] [4.0] [cxt 0] Action entry is NoAction - 
+[01:54:45.874] [bmv2] [T] [thread 3665] [4.0] [cxt 0] Action NoAction
+[01:54:45.874] [bmv2] [T] [thread 3665] [4.0] [cxt 0] ipv10_forward.p4(156) Condition "hdr.ipv4_addr.isValid()" is false
+[01:54:45.874] [bmv2] [D] [thread 3665] [4.0] [cxt 0] Pipeline 'ingress': end
+[01:54:45.874] [bmv2] [D] [thread 3665] [4.0] [cxt 0] Egress port is 0
+[01:54:45.874] [bmv2] [D] [thread 3666] [4.0] [cxt 0] Pipeline 'egress': start
+[01:54:45.874] [bmv2] [D] [thread 3666] [4.0] [cxt 0] Pipeline 'egress': end
+[01:54:45.874] [bmv2] [D] [thread 3666] [4.0] [cxt 0] Deparser 'deparser': start
+[01:54:45.874] [bmv2] [D] [thread 3666] [4.0] [cxt 0] Deparsing header 'ethernet'
+[01:54:45.874] [bmv2] [D] [thread 3666] [4.0] [cxt 0] Deparsing header 'ipv10'
+[01:54:45.874] [bmv2] [D] [thread 3666] [4.0] [cxt 0] Deparsing header 'ipv6_addr'
+[01:54:45.874] [bmv2] [D] [thread 3666] [4.0] [cxt 0] Deparser 'deparser': end
+[01:54:45.874] [bmv2] [D] [thread 3670] [4.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[01:54:45.880] [bmv2] [D] [thread 3665] [5.0] [cxt 0] Processing packet received on port 1
+[01:54:45.880] [bmv2] [D] [thread 3665] [5.0] [cxt 0] Parser 'parser': start
+[01:54:45.880] [bmv2] [D] [thread 3665] [5.0] [cxt 0] Extracting header 'ethernet'
+[01:54:45.880] [bmv2] [D] [thread 3665] [5.0] [cxt 0] Parser state 'start': key is 86dd
+[01:54:45.880] [bmv2] [T] [thread 3665] [5.0] [cxt 0] Bytes parsed: 14
+[01:54:45.880] [bmv2] [D] [thread 3665] [5.0] [cxt 0] Extracting header 'ipv10'
+[01:54:45.880] [bmv2] [D] [thread 3665] [5.0] [cxt 0] Parser set: setting field 'scalars.tmp_0' from lookahead (0, 32), new value is 4278321152
+[01:54:45.880] [bmv2] [D] [thread 3665] [5.0] [cxt 0] Parser state 'parse_ipv10': key is ff020000
+[01:54:45.880] [bmv2] [T] [thread 3665] [5.0] [cxt 0] Bytes parsed: 38
+[01:54:45.880] [bmv2] [D] [thread 3665] [5.0] [cxt 0] Extracting header 'ipv6_addr'
+[01:54:45.880] [bmv2] [D] [thread 3665] [5.0] [cxt 0] Parser state 'parse_ipv6_addr' has no switch, going to default next state
+[01:54:45.880] [bmv2] [T] [thread 3665] [5.0] [cxt 0] Bytes parsed: 54
+[01:54:45.880] [bmv2] [D] [thread 3665] [5.0] [cxt 0] Parser 'parser': end
+[01:54:45.880] [bmv2] [D] [thread 3665] [5.0] [cxt 0] Pipeline 'ingress': start
+[01:54:45.880] [bmv2] [T] [thread 3665] [5.0] [cxt 0] ipv10_forward.p4(153) Condition "hdr.ipv6_addr.isValid()" is true
+[01:54:45.880] [bmv2] [T] [thread 3665] [5.0] [cxt 0] Applying table 'ipv6_lpm'
+[01:54:45.880] [bmv2] [D] [thread 3665] [5.0] [cxt 0] Looking up key:
+* ipv6_addr.dstAddr   : ff020000000000000000000000000016
+
+[01:54:45.880] [bmv2] [D] [thread 3665] [5.0] [cxt 0] Table 'ipv6_lpm': miss
+[01:54:45.880] [bmv2] [D] [thread 3665] [5.0] [cxt 0] Action entry is NoAction - 
+[01:54:45.880] [bmv2] [T] [thread 3665] [5.0] [cxt 0] Action NoAction
+[01:54:45.880] [bmv2] [T] [thread 3665] [5.0] [cxt 0] ipv10_forward.p4(156) Condition "hdr.ipv4_addr.isValid()" is false
+[01:54:45.880] [bmv2] [D] [thread 3665] [5.0] [cxt 0] Pipeline 'ingress': end
+[01:54:45.880] [bmv2] [D] [thread 3665] [5.0] [cxt 0] Egress port is 0
+[01:54:45.880] [bmv2] [D] [thread 3666] [5.0] [cxt 0] Pipeline 'egress': start
+[01:54:45.880] [bmv2] [D] [thread 3666] [5.0] [cxt 0] Pipeline 'egress': end
+[01:54:45.880] [bmv2] [D] [thread 3666] [5.0] [cxt 0] Deparser 'deparser': start
+[01:54:45.880] [bmv2] [D] [thread 3666] [5.0] [cxt 0] Deparsing header 'ethernet'
+[01:54:45.880] [bmv2] [D] [thread 3666] [5.0] [cxt 0] Deparsing header 'ipv10'
+[01:54:45.880] [bmv2] [D] [thread 3666] [5.0] [cxt 0] Deparsing header 'ipv6_addr'
+[01:54:45.880] [bmv2] [D] [thread 3666] [5.0] [cxt 0] Deparser 'deparser': end
+[01:54:45.880] [bmv2] [D] [thread 3670] [5.0] [cxt 0] Transmitting packet of size 90 out of port 0
+[01:54:45.966] [bmv2] [D] [thread 3665] [6.0] [cxt 0] Processing packet received on port 2
+[01:54:45.966] [bmv2] [D] [thread 3665] [6.0] [cxt 0] Parser 'parser': start
+[01:54:45.966] [bmv2] [D] [thread 3665] [6.0] [cxt 0] Extracting header 'ethernet'
+[01:54:45.966] [bmv2] [D] [thread 3665] [6.0] [cxt 0] Parser state 'start': key is 86dd
+[01:54:45.966] [bmv2] [T] [thread 3665] [6.0] [cxt 0] Bytes parsed: 14
+[01:54:45.966] [bmv2] [D] [thread 3665] [6.0] [cxt 0] Extracting header 'ipv10'
+[01:54:45.966] [bmv2] [D] [thread 3665] [6.0] [cxt 0] Parser set: setting field 'scalars.tmp_0' from lookahead (0, 32), new value is 4278321152
+[01:54:45.966] [bmv2] [D] [thread 3665] [6.0] [cxt 0] Parser state 'parse_ipv10': key is ff020000
+[01:54:45.966] [bmv2] [T] [thread 3665] [6.0] [cxt 0] Bytes parsed: 38
+[01:54:45.966] [bmv2] [D] [thread 3665] [6.0] [cxt 0] Extracting header 'ipv6_addr'
+[01:54:45.966] [bmv2] [D] [thread 3665] [6.0] [cxt 0] Parser state 'parse_ipv6_addr' has no switch, going to default next state
+[01:54:45.966] [bmv2] [T] [thread 3665] [6.0] [cxt 0] Bytes parsed: 54
+[01:54:45.966] [bmv2] [D] [thread 3665] [6.0] [cxt 0] Parser 'parser': end
+[01:54:45.966] [bmv2] [D] [thread 3665] [6.0] [cxt 0] Pipeline 'ingress': start
+[01:54:45.966] [bmv2] [T] [thread 3665] [6.0] [cxt 0] ipv10_forward.p4(153) Condition "hdr.ipv6_addr.isValid()" is true
+[01:54:45.966] [bmv2] [T] [thread 3665] [6.0] [cxt 0] Applying table 'ipv6_lpm'
+[01:54:45.966] [bmv2] [D] [thread 3665] [6.0] [cxt 0] Looking up key:
+* ipv6_addr.dstAddr   : ff0200000000000000000000000000fb
+
+[01:54:45.966] [bmv2] [D] [thread 3665] [6.0] [cxt 0] Table 'ipv6_lpm': miss
+[01:54:45.966] [bmv2] [D] [thread 3665] [6.0] [cxt 0] Action entry is NoAction - 
+[01:54:45.966] [bmv2] [T] [thread 3665] [6.0] [cxt 0] Action NoAction
+[01:54:45.966] [bmv2] [T] [thread 3665] [6.0] [cxt 0] ipv10_forward.p4(156) Condition "hdr.ipv4_addr.isValid()" is false
+[01:54:45.966] [bmv2] [D] [thread 3665] [6.0] [cxt 0] Pipeline 'ingress': end
+[01:54:45.966] [bmv2] [D] [thread 3665] [6.0] [cxt 0] Egress port is 0
+[01:54:45.966] [bmv2] [D] [thread 3666] [6.0] [cxt 0] Pipeline 'egress': start
+[01:54:45.966] [bmv2] [D] [thread 3666] [6.0] [cxt 0] Pipeline 'egress': end
+[01:54:45.966] [bmv2] [D] [thread 3666] [6.0] [cxt 0] Deparser 'deparser': start
+[01:54:45.966] [bmv2] [D] [thread 3666] [6.0] [cxt 0] Deparsing header 'ethernet'
+[01:54:45.966] [bmv2] [D] [thread 3666] [6.0] [cxt 0] Deparsing header 'ipv10'
+[01:54:45.966] [bmv2] [D] [thread 3666] [6.0] [cxt 0] Deparsing header 'ipv6_addr'
+[01:54:45.966] [bmv2] [D] [thread 3666] [6.0] [cxt 0] Deparser 'deparser': end
+[01:54:45.967] [bmv2] [D] [thread 3670] [6.0] [cxt 0] Transmitting packet of size 107 out of port 0
+[01:54:45.974] [bmv2] [D] [thread 3665] [7.0] [cxt 0] Processing packet received on port 1
+[01:54:45.974] [bmv2] [D] [thread 3665] [7.0] [cxt 0] Parser 'parser': start
+[01:54:45.974] [bmv2] [D] [thread 3665] [7.0] [cxt 0] Extracting header 'ethernet'
+[01:54:45.974] [bmv2] [D] [thread 3665] [7.0] [cxt 0] Parser state 'start': key is 86dd
+[01:54:45.974] [bmv2] [T] [thread 3665] [7.0] [cxt 0] Bytes parsed: 14
+[01:54:45.974] [bmv2] [D] [thread 3665] [7.0] [cxt 0] Extracting header 'ipv10'
+[01:54:45.974] [bmv2] [D] [thread 3665] [7.0] [cxt 0] Parser set: setting field 'scalars.tmp_0' from lookahead (0, 32), new value is 4278321152
+[01:54:45.974] [bmv2] [D] [thread 3665] [7.0] [cxt 0] Parser state 'parse_ipv10': key is ff020000
+[01:54:45.974] [bmv2] [T] [thread 3665] [7.0] [cxt 0] Bytes parsed: 38
+[01:54:45.974] [bmv2] [D] [thread 3665] [7.0] [cxt 0] Extracting header 'ipv6_addr'
+[01:54:45.974] [bmv2] [D] [thread 3665] [7.0] [cxt 0] Parser state 'parse_ipv6_addr' has no switch, going to default next state
+[01:54:45.974] [bmv2] [T] [thread 3665] [7.0] [cxt 0] Bytes parsed: 54
+[01:54:45.974] [bmv2] [D] [thread 3665] [7.0] [cxt 0] Parser 'parser': end
+[01:54:45.974] [bmv2] [D] [thread 3665] [7.0] [cxt 0] Pipeline 'ingress': start
+[01:54:45.974] [bmv2] [T] [thread 3665] [7.0] [cxt 0] ipv10_forward.p4(153) Condition "hdr.ipv6_addr.isValid()" is true
+[01:54:45.974] [bmv2] [T] [thread 3665] [7.0] [cxt 0] Applying table 'ipv6_lpm'
+[01:54:45.974] [bmv2] [D] [thread 3665] [7.0] [cxt 0] Looking up key:
+* ipv6_addr.dstAddr   : ff0200000000000000000000000000fb
+
+[01:54:45.974] [bmv2] [D] [thread 3665] [7.0] [cxt 0] Table 'ipv6_lpm': miss
+[01:54:45.974] [bmv2] [D] [thread 3665] [7.0] [cxt 0] Action entry is NoAction - 
+[01:54:45.974] [bmv2] [T] [thread 3665] [7.0] [cxt 0] Action NoAction
+[01:54:45.974] [bmv2] [T] [thread 3665] [7.0] [cxt 0] ipv10_forward.p4(156) Condition "hdr.ipv4_addr.isValid()" is false
+[01:54:45.974] [bmv2] [D] [thread 3665] [7.0] [cxt 0] Pipeline 'ingress': end
+[01:54:45.974] [bmv2] [D] [thread 3665] [7.0] [cxt 0] Egress port is 0
+[01:54:45.975] [bmv2] [D] [thread 3666] [7.0] [cxt 0] Pipeline 'egress': start
+[01:54:45.975] [bmv2] [D] [thread 3666] [7.0] [cxt 0] Pipeline 'egress': end
+[01:54:45.975] [bmv2] [D] [thread 3666] [7.0] [cxt 0] Deparser 'deparser': start
+[01:54:45.975] [bmv2] [D] [thread 3666] [7.0] [cxt 0] Deparsing header 'ethernet'
+[01:54:45.975] [bmv2] [D] [thread 3666] [7.0] [cxt 0] Deparsing header 'ipv10'
+[01:54:45.975] [bmv2] [D] [thread 3666] [7.0] [cxt 0] Deparsing header 'ipv6_addr'
+[01:54:45.975] [bmv2] [D] [thread 3666] [7.0] [cxt 0] Deparser 'deparser': end
+[01:54:45.975] [bmv2] [D] [thread 3670] [7.0] [cxt 0] Transmitting packet of size 107 out of port 0
+[01:54:46.028] [bmv2] [D] [thread 3665] [8.0] [cxt 0] Processing packet received on port 1
+[01:54:46.028] [bmv2] [D] [thread 3665] [8.0] [cxt 0] Parser 'parser': start
+[01:54:46.028] [bmv2] [D] [thread 3665] [8.0] [cxt 0] Extracting header 'ethernet'
+[01:54:46.028] [bmv2] [D] [thread 3665] [8.0] [cxt 0] Parser state 'start': key is 86dd
+[01:54:46.028] [bmv2] [T] [thread 3665] [8.0] [cxt 0] Bytes parsed: 14
+[01:54:46.028] [bmv2] [D] [thread 3665] [8.0] [cxt 0] Extracting header 'ipv10'
+[01:54:46.028] [bmv2] [D] [thread 3665] [8.0] [cxt 0] Parser set: setting field 'scalars.tmp_0' from lookahead (0, 32), new value is 4278321152
+[01:54:46.028] [bmv2] [D] [thread 3665] [8.0] [cxt 0] Parser state 'parse_ipv10': key is ff020000
+[01:54:46.028] [bmv2] [T] [thread 3665] [8.0] [cxt 0] Bytes parsed: 38
+[01:54:46.028] [bmv2] [D] [thread 3665] [8.0] [cxt 0] Extracting header 'ipv6_addr'
+[01:54:46.028] [bmv2] [D] [thread 3665] [8.0] [cxt 0] Parser state 'parse_ipv6_addr' has no switch, going to default next state
+[01:54:46.028] [bmv2] [T] [thread 3665] [8.0] [cxt 0] Bytes parsed: 54
+[01:54:46.028] [bmv2] [D] [thread 3665] [8.0] [cxt 0] Parser 'parser': end
+[01:54:46.028] [bmv2] [D] [thread 3665] [8.0] [cxt 0] Pipeline 'ingress': start
+[01:54:46.028] [bmv2] [T] [thread 3665] [8.0] [cxt 0] ipv10_forward.p4(153) Condition "hdr.ipv6_addr.isValid()" is true
+[01:54:46.028] [bmv2] [T] [thread 3665] [8.0] [cxt 0] Applying table 'ipv6_lpm'
+[01:54:46.028] [bmv2] [D] [thread 3665] [8.0] [cxt 0] Looking up key:
+* ipv6_addr.dstAddr   : ff020000000000000000000000000016
+
+[01:54:46.028] [bmv2] [D] [thread 3665] [8.0] [cxt 0] Table 'ipv6_lpm': miss
+[01:54:46.028] [bmv2] [D] [thread 3665] [8.0] [cxt 0] Action entry is NoAction - 
+[01:54:46.028] [bmv2] [T] [thread 3665] [8.0] [cxt 0] Action NoAction
+[01:54:46.028] [bmv2] [T] [thread 3665] [8.0] [cxt 0] ipv10_forward.p4(156) Condition "hdr.ipv4_addr.isValid()" is false
+[01:54:46.028] [bmv2] [D] [thread 3665] [8.0] [cxt 0] Pipeline 'ingress': end
+[01:54:46.028] [bmv2] [D] [thread 3665] [8.0] [cxt 0] Egress port is 0
+[01:54:46.028] [bmv2] [D] [thread 3666] [8.0] [cxt 0] Pipeline 'egress': start
+[01:54:46.028] [bmv2] [D] [thread 3666] [8.0] [cxt 0] Pipeline 'egress': end
+[01:54:46.028] [bmv2] [D] [thread 3666] [8.0] [cxt 0] Deparser 'deparser': start
+[01:54:46.028] [bmv2] [D] [thread 3666] [8.0] [cxt 0] Deparsing header 'ethernet'
+[01:54:46.028] [bmv2] [D] [thread 3666] [8.0] [cxt 0] Deparsing header 'ipv10'
+[01:54:46.028] [bmv2] [D] [thread 3666] [8.0] [cxt 0] Deparsing header 'ipv6_addr'
+[01:54:46.028] [bmv2] [D] [thread 3666] [8.0] [cxt 0] Deparser 'deparser': end
+[01:54:46.028] [bmv2] [D] [thread 3670] [8.0] [cxt 0] Transmitting packet of size 110 out of port 0
+[01:54:46.071] [bmv2] [D] [thread 3665] [9.0] [cxt 0] Processing packet received on port 2
+[01:54:46.071] [bmv2] [D] [thread 3665] [9.0] [cxt 0] Parser 'parser': start
+[01:54:46.071] [bmv2] [D] [thread 3665] [9.0] [cxt 0] Extracting header 'ethernet'
+[01:54:46.071] [bmv2] [D] [thread 3665] [9.0] [cxt 0] Parser state 'start': key is 86dd
+[01:54:46.071] [bmv2] [T] [thread 3665] [9.0] [cxt 0] Bytes parsed: 14
+[01:54:46.071] [bmv2] [D] [thread 3665] [9.0] [cxt 0] Extracting header 'ipv10'
+[01:54:46.071] [bmv2] [D] [thread 3665] [9.0] [cxt 0] Parser set: setting field 'scalars.tmp_0' from lookahead (0, 32), new value is 4278321152
+[01:54:46.071] [bmv2] [D] [thread 3665] [9.0] [cxt 0] Parser state 'parse_ipv10': key is ff020000
+[01:54:46.071] [bmv2] [T] [thread 3665] [9.0] [cxt 0] Bytes parsed: 38
+[01:54:46.071] [bmv2] [D] [thread 3665] [9.0] [cxt 0] Extracting header 'ipv6_addr'
+[01:54:46.071] [bmv2] [D] [thread 3665] [9.0] [cxt 0] Parser state 'parse_ipv6_addr' has no switch, going to default next state
+[01:54:46.071] [bmv2] [T] [thread 3665] [9.0] [cxt 0] Bytes parsed: 54
+[01:54:46.071] [bmv2] [D] [thread 3665] [9.0] [cxt 0] Parser 'parser': end
+[01:54:46.071] [bmv2] [D] [thread 3665] [9.0] [cxt 0] Pipeline 'ingress': start
+[01:54:46.071] [bmv2] [T] [thread 3665] [9.0] [cxt 0] ipv10_forward.p4(153) Condition "hdr.ipv6_addr.isValid()" is true
+[01:54:46.071] [bmv2] [T] [thread 3665] [9.0] [cxt 0] Applying table 'ipv6_lpm'
+[01:54:46.071] [bmv2] [D] [thread 3665] [9.0] [cxt 0] Looking up key:
+* ipv6_addr.dstAddr   : ff0200000000000000000000000000fb
+
+[01:54:46.071] [bmv2] [D] [thread 3665] [9.0] [cxt 0] Table 'ipv6_lpm': miss
+[01:54:46.071] [bmv2] [D] [thread 3665] [9.0] [cxt 0] Action entry is NoAction - 
+[01:54:46.071] [bmv2] [T] [thread 3665] [9.0] [cxt 0] Action NoAction
+[01:54:46.071] [bmv2] [T] [thread 3665] [9.0] [cxt 0] ipv10_forward.p4(156) Condition "hdr.ipv4_addr.isValid()" is false
+[01:54:46.071] [bmv2] [D] [thread 3665] [9.0] [cxt 0] Pipeline 'ingress': end
+[01:54:46.071] [bmv2] [D] [thread 3665] [9.0] [cxt 0] Egress port is 0
+[01:54:46.071] [bmv2] [D] [thread 3666] [9.0] [cxt 0] Pipeline 'egress': start
+[01:54:46.072] [bmv2] [D] [thread 3666] [9.0] [cxt 0] Pipeline 'egress': end
+[01:54:46.072] [bmv2] [D] [thread 3666] [9.0] [cxt 0] Deparser 'deparser': start
+[01:54:46.072] [bmv2] [D] [thread 3666] [9.0] [cxt 0] Deparsing header 'ethernet'
+[01:54:46.072] [bmv2] [D] [thread 3666] [9.0] [cxt 0] Deparsing header 'ipv10'
+[01:54:46.072] [bmv2] [D] [thread 3666] [9.0] [cxt 0] Deparsing header 'ipv6_addr'
+[01:54:46.072] [bmv2] [D] [thread 3666] [9.0] [cxt 0] Deparser 'deparser': end
+[01:54:46.072] [bmv2] [D] [thread 3670] [9.0] [cxt 0] Transmitting packet of size 321 out of port 0
+[01:54:46.079] [bmv2] [D] [thread 3665] [10.0] [cxt 0] Processing packet received on port 1
+[01:54:46.079] [bmv2] [D] [thread 3665] [10.0] [cxt 0] Parser 'parser': start
+[01:54:46.079] [bmv2] [D] [thread 3665] [10.0] [cxt 0] Extracting header 'ethernet'
+[01:54:46.079] [bmv2] [D] [thread 3665] [10.0] [cxt 0] Parser state 'start': key is 86dd
+[01:54:46.079] [bmv2] [T] [thread 3665] [10.0] [cxt 0] Bytes parsed: 14
+[01:54:46.079] [bmv2] [D] [thread 3665] [10.0] [cxt 0] Extracting header 'ipv10'
+[01:54:46.079] [bmv2] [D] [thread 3665] [10.0] [cxt 0] Parser set: setting field 'scalars.tmp_0' from lookahead (0, 32), new value is 4278321152
+[01:54:46.079] [bmv2] [D] [thread 3665] [10.0] [cxt 0] Parser state 'parse_ipv10': key is ff020000
+[01:54:46.079] [bmv2] [T] [thread 3665] [10.0] [cxt 0] Bytes parsed: 38
+[01:54:46.079] [bmv2] [D] [thread 3665] [10.0] [cxt 0] Extracting header 'ipv6_addr'
+[01:54:46.079] [bmv2] [D] [thread 3665] [10.0] [cxt 0] Parser state 'parse_ipv6_addr' has no switch, going to default next state
+[01:54:46.079] [bmv2] [T] [thread 3665] [10.0] [cxt 0] Bytes parsed: 54
+[01:54:46.079] [bmv2] [D] [thread 3665] [10.0] [cxt 0] Parser 'parser': end
+[01:54:46.079] [bmv2] [D] [thread 3665] [10.0] [cxt 0] Pipeline 'ingress': start
+[01:54:46.079] [bmv2] [T] [thread 3665] [10.0] [cxt 0] ipv10_forward.p4(153) Condition "hdr.ipv6_addr.isValid()" is true
+[01:54:46.079] [bmv2] [T] [thread 3665] [10.0] [cxt 0] Applying table 'ipv6_lpm'
+[01:54:46.079] [bmv2] [D] [thread 3665] [10.0] [cxt 0] Looking up key:
+* ipv6_addr.dstAddr   : ff0200000000000000000000000000fb
+
+[01:54:46.079] [bmv2] [D] [thread 3665] [10.0] [cxt 0] Table 'ipv6_lpm': miss
+[01:54:46.079] [bmv2] [D] [thread 3665] [10.0] [cxt 0] Action entry is NoAction - 
+[01:54:46.079] [bmv2] [T] [thread 3665] [10.0] [cxt 0] Action NoAction
+[01:54:46.079] [bmv2] [T] [thread 3665] [10.0] [cxt 0] ipv10_forward.p4(156) Condition "hdr.ipv4_addr.isValid()" is false
+[01:54:46.079] [bmv2] [D] [thread 3665] [10.0] [cxt 0] Pipeline 'ingress': end
+[01:54:46.079] [bmv2] [D] [thread 3665] [10.0] [cxt 0] Egress port is 0
+[01:54:46.079] [bmv2] [D] [thread 3666] [10.0] [cxt 0] Pipeline 'egress': start
+[01:54:46.079] [bmv2] [D] [thread 3666] [10.0] [cxt 0] Pipeline 'egress': end
+[01:54:46.079] [bmv2] [D] [thread 3666] [10.0] [cxt 0] Deparser 'deparser': start
+[01:54:46.079] [bmv2] [D] [thread 3666] [10.0] [cxt 0] Deparsing header 'ethernet'
+[01:54:46.079] [bmv2] [D] [thread 3666] [10.0] [cxt 0] Deparsing header 'ipv10'
+[01:54:46.079] [bmv2] [D] [thread 3666] [10.0] [cxt 0] Deparsing header 'ipv6_addr'
+[01:54:46.079] [bmv2] [D] [thread 3666] [10.0] [cxt 0] Deparser 'deparser': end
+[01:54:46.079] [bmv2] [D] [thread 3670] [10.0] [cxt 0] Transmitting packet of size 321 out of port 0
+[01:54:46.132] [bmv2] [D] [thread 3665] [11.0] [cxt 0] Processing packet received on port 1
+[01:54:46.132] [bmv2] [D] [thread 3665] [11.0] [cxt 0] Parser 'parser': start
+[01:54:46.132] [bmv2] [D] [thread 3665] [11.0] [cxt 0] Extracting header 'ethernet'
+[01:54:46.132] [bmv2] [D] [thread 3665] [11.0] [cxt 0] Parser state 'start': key is 86dd
+[01:54:46.132] [bmv2] [T] [thread 3665] [11.0] [cxt 0] Bytes parsed: 14
+[01:54:46.132] [bmv2] [D] [thread 3665] [11.0] [cxt 0] Extracting header 'ipv10'
+[01:54:46.132] [bmv2] [D] [thread 3665] [11.0] [cxt 0] Parser set: setting field 'scalars.tmp_0' from lookahead (0, 32), new value is 4278321152
+[01:54:46.132] [bmv2] [D] [thread 3665] [11.0] [cxt 0] Parser state 'parse_ipv10': key is ff020000
+[01:54:46.132] [bmv2] [T] [thread 3665] [11.0] [cxt 0] Bytes parsed: 38
+[01:54:46.132] [bmv2] [D] [thread 3665] [11.0] [cxt 0] Extracting header 'ipv6_addr'
+[01:54:46.132] [bmv2] [D] [thread 3665] [11.0] [cxt 0] Parser state 'parse_ipv6_addr' has no switch, going to default next state
+[01:54:46.132] [bmv2] [T] [thread 3665] [11.0] [cxt 0] Bytes parsed: 54
+[01:54:46.132] [bmv2] [D] [thread 3665] [11.0] [cxt 0] Parser 'parser': end
+[01:54:46.132] [bmv2] [D] [thread 3665] [11.0] [cxt 0] Pipeline 'ingress': start
+[01:54:46.132] [bmv2] [T] [thread 3665] [11.0] [cxt 0] ipv10_forward.p4(153) Condition "hdr.ipv6_addr.isValid()" is true
+[01:54:46.132] [bmv2] [T] [thread 3665] [11.0] [cxt 0] Applying table 'ipv6_lpm'
+[01:54:46.132] [bmv2] [D] [thread 3665] [11.0] [cxt 0] Looking up key:
+* ipv6_addr.dstAddr   : ff0200000000000000000000000000fb
+
+[01:54:46.132] [bmv2] [D] [thread 3665] [11.0] [cxt 0] Table 'ipv6_lpm': miss
+[01:54:46.132] [bmv2] [D] [thread 3665] [11.0] [cxt 0] Action entry is NoAction - 
+[01:54:46.132] [bmv2] [T] [thread 3665] [11.0] [cxt 0] Action NoAction
+[01:54:46.132] [bmv2] [T] [thread 3665] [11.0] [cxt 0] ipv10_forward.p4(156) Condition "hdr.ipv4_addr.isValid()" is false
+[01:54:46.132] [bmv2] [D] [thread 3665] [11.0] [cxt 0] Pipeline 'ingress': end
+[01:54:46.132] [bmv2] [D] [thread 3665] [11.0] [cxt 0] Egress port is 0
+[01:54:46.132] [bmv2] [D] [thread 3665] [12.0] [cxt 0] Processing packet received on port 2
+[01:54:46.132] [bmv2] [D] [thread 3665] [12.0] [cxt 0] Parser 'parser': start
+[01:54:46.132] [bmv2] [D] [thread 3665] [12.0] [cxt 0] Extracting header 'ethernet'
+[01:54:46.132] [bmv2] [D] [thread 3665] [12.0] [cxt 0] Parser state 'start': key is 86dd
+[01:54:46.132] [bmv2] [T] [thread 3665] [12.0] [cxt 0] Bytes parsed: 14
+[01:54:46.132] [bmv2] [D] [thread 3665] [12.0] [cxt 0] Extracting header 'ipv10'
+[01:54:46.132] [bmv2] [D] [thread 3665] [12.0] [cxt 0] Parser set: setting field 'scalars.tmp_0' from lookahead (0, 32), new value is 4278321152
+[01:54:46.132] [bmv2] [D] [thread 3665] [12.0] [cxt 0] Parser state 'parse_ipv10': key is ff020000
+[01:54:46.132] [bmv2] [T] [thread 3665] [12.0] [cxt 0] Bytes parsed: 38
+[01:54:46.132] [bmv2] [D] [thread 3665] [12.0] [cxt 0] Extracting header 'ipv6_addr'
+[01:54:46.132] [bmv2] [D] [thread 3665] [12.0] [cxt 0] Parser state 'parse_ipv6_addr' has no switch, going to default next state
+[01:54:46.132] [bmv2] [T] [thread 3665] [12.0] [cxt 0] Bytes parsed: 54
+[01:54:46.132] [bmv2] [D] [thread 3665] [12.0] [cxt 0] Parser 'parser': end
+[01:54:46.132] [bmv2] [D] [thread 3665] [12.0] [cxt 0] Pipeline 'ingress': start
+[01:54:46.132] [bmv2] [T] [thread 3665] [12.0] [cxt 0] ipv10_forward.p4(153) Condition "hdr.ipv6_addr.isValid()" is true
+[01:54:46.132] [bmv2] [T] [thread 3665] [12.0] [cxt 0] Applying table 'ipv6_lpm'
+[01:54:46.132] [bmv2] [D] [thread 3665] [12.0] [cxt 0] Looking up key:
+* ipv6_addr.dstAddr   : ff0200000000000000000000000000fb
+
+[01:54:46.132] [bmv2] [D] [thread 3665] [12.0] [cxt 0] Table 'ipv6_lpm': miss
+[01:54:46.132] [bmv2] [D] [thread 3665] [12.0] [cxt 0] Action entry is NoAction - 
+[01:54:46.132] [bmv2] [T] [thread 3665] [12.0] [cxt 0] Action NoAction
+[01:54:46.132] [bmv2] [T] [thread 3665] [12.0] [cxt 0] ipv10_forward.p4(156) Condition "hdr.ipv4_addr.isValid()" is false
+[01:54:46.132] [bmv2] [D] [thread 3665] [12.0] [cxt 0] Pipeline 'ingress': end
+[01:54:46.132] [bmv2] [D] [thread 3665] [12.0] [cxt 0] Egress port is 0
+[01:54:46.133] [bmv2] [D] [thread 3666] [11.0] [cxt 0] Pipeline 'egress': start
+[01:54:46.133] [bmv2] [D] [thread 3666] [11.0] [cxt 0] Pipeline 'egress': end
+[01:54:46.133] [bmv2] [D] [thread 3666] [11.0] [cxt 0] Deparser 'deparser': start
+[01:54:46.133] [bmv2] [D] [thread 3666] [11.0] [cxt 0] Deparsing header 'ethernet'
+[01:54:46.133] [bmv2] [D] [thread 3666] [11.0] [cxt 0] Deparsing header 'ipv10'
+[01:54:46.133] [bmv2] [D] [thread 3666] [11.0] [cxt 0] Deparsing header 'ipv6_addr'
+[01:54:46.133] [bmv2] [D] [thread 3666] [11.0] [cxt 0] Deparser 'deparser': end
+[01:54:46.133] [bmv2] [D] [thread 3666] [12.0] [cxt 0] Pipeline 'egress': start
+[01:54:46.133] [bmv2] [D] [thread 3666] [12.0] [cxt 0] Pipeline 'egress': end
+[01:54:46.133] [bmv2] [D] [thread 3666] [12.0] [cxt 0] Deparser 'deparser': start
+[01:54:46.133] [bmv2] [D] [thread 3666] [12.0] [cxt 0] Deparsing header 'ethernet'
+[01:54:46.133] [bmv2] [D] [thread 3666] [12.0] [cxt 0] Deparsing header 'ipv10'
+[01:54:46.133] [bmv2] [D] [thread 3666] [12.0] [cxt 0] Deparsing header 'ipv6_addr'
+[01:54:46.133] [bmv2] [D] [thread 3666] [12.0] [cxt 0] Deparser 'deparser': end
+[01:54:46.133] [bmv2] [D] [thread 3670] [11.0] [cxt 0] Transmitting packet of size 175 out of port 0
+[01:54:46.133] [bmv2] [D] [thread 3670] [12.0] [cxt 0] Transmitting packet of size 175 out of port 0
+[01:54:46.322] [bmv2] [D] [thread 3665] [13.0] [cxt 0] Processing packet received on port 2
+[01:54:46.322] [bmv2] [D] [thread 3665] [13.0] [cxt 0] Parser 'parser': start
+[01:54:46.322] [bmv2] [D] [thread 3665] [13.0] [cxt 0] Extracting header 'ethernet'
+[01:54:46.322] [bmv2] [D] [thread 3665] [13.0] [cxt 0] Parser state 'start': key is 86dd
+[01:54:46.322] [bmv2] [T] [thread 3665] [13.0] [cxt 0] Bytes parsed: 14
+[01:54:46.322] [bmv2] [D] [thread 3665] [13.0] [cxt 0] Extracting header 'ipv10'
+[01:54:46.322] [bmv2] [D] [thread 3665] [13.0] [cxt 0] Parser set: setting field 'scalars.tmp_0' from lookahead (0, 32), new value is 4278321152
+[01:54:46.322] [bmv2] [D] [thread 3665] [13.0] [cxt 0] Parser state 'parse_ipv10': key is ff020000
+[01:54:46.322] [bmv2] [T] [thread 3665] [13.0] [cxt 0] Bytes parsed: 38
+[01:54:46.322] [bmv2] [D] [thread 3665] [13.0] [cxt 0] Extracting header 'ipv6_addr'
+[01:54:46.322] [bmv2] [D] [thread 3665] [13.0] [cxt 0] Parser state 'parse_ipv6_addr' has no switch, going to default next state
+[01:54:46.322] [bmv2] [T] [thread 3665] [13.0] [cxt 0] Bytes parsed: 54
+[01:54:46.322] [bmv2] [D] [thread 3665] [13.0] [cxt 0] Parser 'parser': end
+[01:54:46.322] [bmv2] [D] [thread 3665] [13.0] [cxt 0] Pipeline 'ingress': start
+[01:54:46.322] [bmv2] [T] [thread 3665] [13.0] [cxt 0] ipv10_forward.p4(153) Condition "hdr.ipv6_addr.isValid()" is true
+[01:54:46.322] [bmv2] [T] [thread 3665] [13.0] [cxt 0] Applying table 'ipv6_lpm'
+[01:54:46.322] [bmv2] [D] [thread 3665] [13.0] [cxt 0] Looking up key:
+* ipv6_addr.dstAddr   : ff0200000000000000000000000000fb
+
+[01:54:46.322] [bmv2] [D] [thread 3665] [13.0] [cxt 0] Table 'ipv6_lpm': miss
+[01:54:46.322] [bmv2] [D] [thread 3665] [13.0] [cxt 0] Action entry is NoAction - 
+[01:54:46.322] [bmv2] [T] [thread 3665] [13.0] [cxt 0] Action NoAction
+[01:54:46.322] [bmv2] [T] [thread 3665] [13.0] [cxt 0] ipv10_forward.p4(156) Condition "hdr.ipv4_addr.isValid()" is false
+[01:54:46.322] [bmv2] [D] [thread 3665] [13.0] [cxt 0] Pipeline 'ingress': end
+[01:54:46.322] [bmv2] [D] [thread 3665] [13.0] [cxt 0] Egress port is 0
+[01:54:46.322] [bmv2] [D] [thread 3666] [13.0] [cxt 0] Pipeline 'egress': start
+[01:54:46.322] [bmv2] [D] [thread 3666] [13.0] [cxt 0] Pipeline 'egress': end
+[01:54:46.322] [bmv2] [D] [thread 3666] [13.0] [cxt 0] Deparser 'deparser': start
+[01:54:46.322] [bmv2] [D] [thread 3666] [13.0] [cxt 0] Deparsing header 'ethernet'
+[01:54:46.322] [bmv2] [D] [thread 3666] [13.0] [cxt 0] Deparsing header 'ipv10'
+[01:54:46.322] [bmv2] [D] [thread 3666] [13.0] [cxt 0] Deparsing header 'ipv6_addr'
+[01:54:46.322] [bmv2] [D] [thread 3666] [13.0] [cxt 0] Deparser 'deparser': end
+[01:54:46.322] [bmv2] [D] [thread 3670] [13.0] [cxt 0] Transmitting packet of size 321 out of port 0
+[01:54:46.329] [bmv2] [D] [thread 3665] [14.0] [cxt 0] Processing packet received on port 1
+[01:54:46.329] [bmv2] [D] [thread 3665] [14.0] [cxt 0] Parser 'parser': start
+[01:54:46.329] [bmv2] [D] [thread 3665] [14.0] [cxt 0] Extracting header 'ethernet'
+[01:54:46.329] [bmv2] [D] [thread 3665] [14.0] [cxt 0] Parser state 'start': key is 86dd
+[01:54:46.329] [bmv2] [T] [thread 3665] [14.0] [cxt 0] Bytes parsed: 14
+[01:54:46.329] [bmv2] [D] [thread 3665] [14.0] [cxt 0] Extracting header 'ipv10'
+[01:54:46.329] [bmv2] [D] [thread 3665] [14.0] [cxt 0] Parser set: setting field 'scalars.tmp_0' from lookahead (0, 32), new value is 4278321152
+[01:54:46.329] [bmv2] [D] [thread 3665] [14.0] [cxt 0] Parser state 'parse_ipv10': key is ff020000
+[01:54:46.329] [bmv2] [T] [thread 3665] [14.0] [cxt 0] Bytes parsed: 38
+[01:54:46.329] [bmv2] [D] [thread 3665] [14.0] [cxt 0] Extracting header 'ipv6_addr'
+[01:54:46.329] [bmv2] [D] [thread 3665] [14.0] [cxt 0] Parser state 'parse_ipv6_addr' has no switch, going to default next state
+[01:54:46.329] [bmv2] [T] [thread 3665] [14.0] [cxt 0] Bytes parsed: 54
+[01:54:46.329] [bmv2] [D] [thread 3665] [14.0] [cxt 0] Parser 'parser': end
+[01:54:46.329] [bmv2] [D] [thread 3665] [14.0] [cxt 0] Pipeline 'ingress': start
+[01:54:46.329] [bmv2] [T] [thread 3665] [14.0] [cxt 0] ipv10_forward.p4(153) Condition "hdr.ipv6_addr.isValid()" is true
+[01:54:46.329] [bmv2] [T] [thread 3665] [14.0] [cxt 0] Applying table 'ipv6_lpm'
+[01:54:46.329] [bmv2] [D] [thread 3665] [14.0] [cxt 0] Looking up key:
+* ipv6_addr.dstAddr   : ff0200000000000000000000000000fb
+
+[01:54:46.329] [bmv2] [D] [thread 3665] [14.0] [cxt 0] Table 'ipv6_lpm': miss
+[01:54:46.329] [bmv2] [D] [thread 3665] [14.0] [cxt 0] Action entry is NoAction - 
+[01:54:46.329] [bmv2] [T] [thread 3665] [14.0] [cxt 0] Action NoAction
+[01:54:46.329] [bmv2] [T] [thread 3665] [14.0] [cxt 0] ipv10_forward.p4(156) Condition "hdr.ipv4_addr.isValid()" is false
+[01:54:46.329] [bmv2] [D] [thread 3665] [14.0] [cxt 0] Pipeline 'ingress': end
+[01:54:46.329] [bmv2] [D] [thread 3665] [14.0] [cxt 0] Egress port is 0
+[01:54:46.329] [bmv2] [D] [thread 3666] [14.0] [cxt 0] Pipeline 'egress': start
+[01:54:46.329] [bmv2] [D] [thread 3666] [14.0] [cxt 0] Pipeline 'egress': end
+[01:54:46.329] [bmv2] [D] [thread 3666] [14.0] [cxt 0] Deparser 'deparser': start
+[01:54:46.329] [bmv2] [D] [thread 3666] [14.0] [cxt 0] Deparsing header 'ethernet'
+[01:54:46.329] [bmv2] [D] [thread 3666] [14.0] [cxt 0] Deparsing header 'ipv10'
+[01:54:46.329] [bmv2] [D] [thread 3666] [14.0] [cxt 0] Deparsing header 'ipv6_addr'
+[01:54:46.329] [bmv2] [D] [thread 3666] [14.0] [cxt 0] Deparser 'deparser': end
+[01:54:46.329] [bmv2] [D] [thread 3670] [14.0] [cxt 0] Transmitting packet of size 321 out of port 0
+[01:54:46.368] [bmv2] [D] [thread 3665] [15.0] [cxt 0] Processing packet received on port 2
+[01:54:46.368] [bmv2] [D] [thread 3665] [15.0] [cxt 0] Parser 'parser': start
+[01:54:46.368] [bmv2] [D] [thread 3665] [15.0] [cxt 0] Extracting header 'ethernet'
+[01:54:46.368] [bmv2] [D] [thread 3665] [15.0] [cxt 0] Parser state 'start': key is 86dd
+[01:54:46.368] [bmv2] [T] [thread 3665] [15.0] [cxt 0] Bytes parsed: 14
+[01:54:46.368] [bmv2] [D] [thread 3665] [15.0] [cxt 0] Extracting header 'ipv10'
+[01:54:46.368] [bmv2] [D] [thread 3665] [15.0] [cxt 0] Parser set: setting field 'scalars.tmp_0' from lookahead (0, 32), new value is 4278321152
+[01:54:46.368] [bmv2] [D] [thread 3665] [15.0] [cxt 0] Parser state 'parse_ipv10': key is ff020000
+[01:54:46.368] [bmv2] [T] [thread 3665] [15.0] [cxt 0] Bytes parsed: 38
+[01:54:46.368] [bmv2] [D] [thread 3665] [15.0] [cxt 0] Extracting header 'ipv6_addr'
+[01:54:46.368] [bmv2] [D] [thread 3665] [15.0] [cxt 0] Parser state 'parse_ipv6_addr' has no switch, going to default next state
+[01:54:46.368] [bmv2] [T] [thread 3665] [15.0] [cxt 0] Bytes parsed: 54
+[01:54:46.368] [bmv2] [D] [thread 3665] [15.0] [cxt 0] Parser 'parser': end
+[01:54:46.368] [bmv2] [D] [thread 3665] [15.0] [cxt 0] Pipeline 'ingress': start
+[01:54:46.368] [bmv2] [T] [thread 3665] [15.0] [cxt 0] ipv10_forward.p4(153) Condition "hdr.ipv6_addr.isValid()" is true
+[01:54:46.368] [bmv2] [T] [thread 3665] [15.0] [cxt 0] Applying table 'ipv6_lpm'
+[01:54:46.368] [bmv2] [D] [thread 3665] [15.0] [cxt 0] Looking up key:
+* ipv6_addr.dstAddr   : ff020000000000000000000000000016
+
+[01:54:46.368] [bmv2] [D] [thread 3665] [15.0] [cxt 0] Table 'ipv6_lpm': miss
+[01:54:46.368] [bmv2] [D] [thread 3665] [15.0] [cxt 0] Action entry is NoAction - 
+[01:54:46.368] [bmv2] [T] [thread 3665] [15.0] [cxt 0] Action NoAction
+[01:54:46.368] [bmv2] [T] [thread 3665] [15.0] [cxt 0] ipv10_forward.p4(156) Condition "hdr.ipv4_addr.isValid()" is false
+[01:54:46.368] [bmv2] [D] [thread 3665] [15.0] [cxt 0] Pipeline 'ingress': end
+[01:54:46.368] [bmv2] [D] [thread 3665] [15.0] [cxt 0] Egress port is 0
+[01:54:46.368] [bmv2] [D] [thread 3666] [15.0] [cxt 0] Pipeline 'egress': start
+[01:54:46.368] [bmv2] [D] [thread 3666] [15.0] [cxt 0] Pipeline 'egress': end
+[01:54:46.368] [bmv2] [D] [thread 3666] [15.0] [cxt 0] Deparser 'deparser': start
+[01:54:46.368] [bmv2] [D] [thread 3666] [15.0] [cxt 0] Deparsing header 'ethernet'
+[01:54:46.368] [bmv2] [D] [thread 3666] [15.0] [cxt 0] Deparsing header 'ipv10'
+[01:54:46.368] [bmv2] [D] [thread 3666] [15.0] [cxt 0] Deparsing header 'ipv6_addr'
+[01:54:46.368] [bmv2] [D] [thread 3666] [15.0] [cxt 0] Deparser 'deparser': end
+[01:54:46.368] [bmv2] [D] [thread 3670] [15.0] [cxt 0] Transmitting packet of size 90 out of port 0
+[01:54:46.574] [bmv2] [D] [thread 3665] [16.0] [cxt 0] Processing packet received on port 2
+[01:54:46.574] [bmv2] [D] [thread 3665] [16.0] [cxt 0] Parser 'parser': start
+[01:54:46.574] [bmv2] [D] [thread 3665] [16.0] [cxt 0] Extracting header 'ethernet'
+[01:54:46.574] [bmv2] [D] [thread 3665] [16.0] [cxt 0] Parser state 'start': key is 86dd
+[01:54:46.574] [bmv2] [T] [thread 3665] [16.0] [cxt 0] Bytes parsed: 14
+[01:54:46.574] [bmv2] [D] [thread 3665] [16.0] [cxt 0] Extracting header 'ipv10'
+[01:54:46.574] [bmv2] [D] [thread 3665] [16.0] [cxt 0] Parser set: setting field 'scalars.tmp_0' from lookahead (0, 32), new value is 4278321152
+[01:54:46.574] [bmv2] [D] [thread 3665] [16.0] [cxt 0] Parser state 'parse_ipv10': key is ff020000
+[01:54:46.574] [bmv2] [T] [thread 3665] [16.0] [cxt 0] Bytes parsed: 38
+[01:54:46.574] [bmv2] [D] [thread 3665] [16.0] [cxt 0] Extracting header 'ipv6_addr'
+[01:54:46.574] [bmv2] [D] [thread 3665] [16.0] [cxt 0] Parser state 'parse_ipv6_addr' has no switch, going to default next state
+[01:54:46.574] [bmv2] [T] [thread 3665] [16.0] [cxt 0] Bytes parsed: 54
+[01:54:46.574] [bmv2] [D] [thread 3665] [16.0] [cxt 0] Parser 'parser': end
+[01:54:46.574] [bmv2] [D] [thread 3665] [16.0] [cxt 0] Pipeline 'ingress': start
+[01:54:46.574] [bmv2] [T] [thread 3665] [16.0] [cxt 0] ipv10_forward.p4(153) Condition "hdr.ipv6_addr.isValid()" is true
+[01:54:46.574] [bmv2] [T] [thread 3665] [16.0] [cxt 0] Applying table 'ipv6_lpm'
+[01:54:46.574] [bmv2] [D] [thread 3665] [16.0] [cxt 0] Looking up key:
+* ipv6_addr.dstAddr   : ff0200000000000000000000000000fb
+
+[01:54:46.574] [bmv2] [D] [thread 3665] [16.0] [cxt 0] Table 'ipv6_lpm': miss
+[01:54:46.574] [bmv2] [D] [thread 3665] [16.0] [cxt 0] Action entry is NoAction - 
+[01:54:46.574] [bmv2] [T] [thread 3665] [16.0] [cxt 0] Action NoAction
+[01:54:46.574] [bmv2] [T] [thread 3665] [16.0] [cxt 0] ipv10_forward.p4(156) Condition "hdr.ipv4_addr.isValid()" is false
+[01:54:46.574] [bmv2] [D] [thread 3665] [16.0] [cxt 0] Pipeline 'ingress': end
+[01:54:46.574] [bmv2] [D] [thread 3665] [16.0] [cxt 0] Egress port is 0
+[01:54:46.574] [bmv2] [D] [thread 3666] [16.0] [cxt 0] Pipeline 'egress': start
+[01:54:46.574] [bmv2] [D] [thread 3666] [16.0] [cxt 0] Pipeline 'egress': end
+[01:54:46.574] [bmv2] [D] [thread 3666] [16.0] [cxt 0] Deparser 'deparser': start
+[01:54:46.574] [bmv2] [D] [thread 3666] [16.0] [cxt 0] Deparsing header 'ethernet'
+[01:54:46.574] [bmv2] [D] [thread 3666] [16.0] [cxt 0] Deparsing header 'ipv10'
+[01:54:46.574] [bmv2] [D] [thread 3666] [16.0] [cxt 0] Deparsing header 'ipv6_addr'
+[01:54:46.574] [bmv2] [D] [thread 3666] [16.0] [cxt 0] Deparser 'deparser': end
+[01:54:46.574] [bmv2] [D] [thread 3670] [16.0] [cxt 0] Transmitting packet of size 321 out of port 0
+[01:54:46.582] [bmv2] [D] [thread 3665] [17.0] [cxt 0] Processing packet received on port 1
+[01:54:46.582] [bmv2] [D] [thread 3665] [17.0] [cxt 0] Parser 'parser': start
+[01:54:46.582] [bmv2] [D] [thread 3665] [17.0] [cxt 0] Extracting header 'ethernet'
+[01:54:46.582] [bmv2] [D] [thread 3665] [17.0] [cxt 0] Parser state 'start': key is 86dd
+[01:54:46.582] [bmv2] [T] [thread 3665] [17.0] [cxt 0] Bytes parsed: 14
+[01:54:46.582] [bmv2] [D] [thread 3665] [17.0] [cxt 0] Extracting header 'ipv10'
+[01:54:46.582] [bmv2] [D] [thread 3665] [17.0] [cxt 0] Parser set: setting field 'scalars.tmp_0' from lookahead (0, 32), new value is 4278321152
+[01:54:46.582] [bmv2] [D] [thread 3665] [17.0] [cxt 0] Parser state 'parse_ipv10': key is ff020000
+[01:54:46.582] [bmv2] [T] [thread 3665] [17.0] [cxt 0] Bytes parsed: 38
+[01:54:46.582] [bmv2] [D] [thread 3665] [17.0] [cxt 0] Extracting header 'ipv6_addr'
+[01:54:46.582] [bmv2] [D] [thread 3665] [17.0] [cxt 0] Parser state 'parse_ipv6_addr' has no switch, going to default next state
+[01:54:46.582] [bmv2] [T] [thread 3665] [17.0] [cxt 0] Bytes parsed: 54
+[01:54:46.582] [bmv2] [D] [thread 3665] [17.0] [cxt 0] Parser 'parser': end
+[01:54:46.582] [bmv2] [D] [thread 3665] [17.0] [cxt 0] Pipeline 'ingress': start
+[01:54:46.582] [bmv2] [T] [thread 3665] [17.0] [cxt 0] ipv10_forward.p4(153) Condition "hdr.ipv6_addr.isValid()" is true
+[01:54:46.582] [bmv2] [T] [thread 3665] [17.0] [cxt 0] Applying table 'ipv6_lpm'
+[01:54:46.582] [bmv2] [D] [thread 3665] [17.0] [cxt 0] Looking up key:
+* ipv6_addr.dstAddr   : ff0200000000000000000000000000fb
+
+[01:54:46.582] [bmv2] [D] [thread 3665] [17.0] [cxt 0] Table 'ipv6_lpm': miss
+[01:54:46.582] [bmv2] [D] [thread 3665] [17.0] [cxt 0] Action entry is NoAction - 
+[01:54:46.582] [bmv2] [T] [thread 3665] [17.0] [cxt 0] Action NoAction
+[01:54:46.582] [bmv2] [T] [thread 3665] [17.0] [cxt 0] ipv10_forward.p4(156) Condition "hdr.ipv4_addr.isValid()" is false
+[01:54:46.582] [bmv2] [D] [thread 3665] [17.0] [cxt 0] Pipeline 'ingress': end
+[01:54:46.582] [bmv2] [D] [thread 3665] [17.0] [cxt 0] Egress port is 0
+[01:54:46.582] [bmv2] [D] [thread 3666] [17.0] [cxt 0] Pipeline 'egress': start
+[01:54:46.582] [bmv2] [D] [thread 3666] [17.0] [cxt 0] Pipeline 'egress': end
+[01:54:46.582] [bmv2] [D] [thread 3666] [17.0] [cxt 0] Deparser 'deparser': start
+[01:54:46.582] [bmv2] [D] [thread 3666] [17.0] [cxt 0] Deparsing header 'ethernet'
+[01:54:46.582] [bmv2] [D] [thread 3666] [17.0] [cxt 0] Deparsing header 'ipv10'
+[01:54:46.582] [bmv2] [D] [thread 3666] [17.0] [cxt 0] Deparsing header 'ipv6_addr'
+[01:54:46.582] [bmv2] [D] [thread 3666] [17.0] [cxt 0] Deparser 'deparser': end
+[01:54:46.582] [bmv2] [D] [thread 3670] [17.0] [cxt 0] Transmitting packet of size 321 out of port 0
+[01:54:46.636] [bmv2] [D] [thread 3665] [18.0] [cxt 0] Processing packet received on port 2
+[01:54:46.636] [bmv2] [D] [thread 3665] [18.0] [cxt 0] Parser 'parser': start
+[01:54:46.636] [bmv2] [D] [thread 3665] [18.0] [cxt 0] Extracting header 'ethernet'
+[01:54:46.636] [bmv2] [D] [thread 3665] [18.0] [cxt 0] Parser state 'start': key is 86dd
+[01:54:46.636] [bmv2] [T] [thread 3665] [18.0] [cxt 0] Bytes parsed: 14
+[01:54:46.636] [bmv2] [D] [thread 3665] [18.0] [cxt 0] Extracting header 'ipv10'
+[01:54:46.636] [bmv2] [D] [thread 3665] [18.0] [cxt 0] Parser set: setting field 'scalars.tmp_0' from lookahead (0, 32), new value is 4278321152
+[01:54:46.636] [bmv2] [D] [thread 3665] [18.0] [cxt 0] Parser state 'parse_ipv10': key is ff020000
+[01:54:46.636] [bmv2] [T] [thread 3665] [18.0] [cxt 0] Bytes parsed: 38
+[01:54:46.636] [bmv2] [D] [thread 3665] [18.0] [cxt 0] Extracting header 'ipv6_addr'
+[01:54:46.636] [bmv2] [D] [thread 3665] [18.0] [cxt 0] Parser state 'parse_ipv6_addr' has no switch, going to default next state
+[01:54:46.636] [bmv2] [T] [thread 3665] [18.0] [cxt 0] Bytes parsed: 54
+[01:54:46.636] [bmv2] [D] [thread 3665] [18.0] [cxt 0] Parser 'parser': end
+[01:54:46.636] [bmv2] [D] [thread 3665] [18.0] [cxt 0] Pipeline 'ingress': start
+[01:54:46.636] [bmv2] [T] [thread 3665] [18.0] [cxt 0] ipv10_forward.p4(153) Condition "hdr.ipv6_addr.isValid()" is true
+[01:54:46.636] [bmv2] [T] [thread 3665] [18.0] [cxt 0] Applying table 'ipv6_lpm'
+[01:54:46.636] [bmv2] [D] [thread 3665] [18.0] [cxt 0] Looking up key:
+* ipv6_addr.dstAddr   : ff020000000000000000000000000016
+
+[01:54:46.636] [bmv2] [D] [thread 3665] [18.0] [cxt 0] Table 'ipv6_lpm': miss
+[01:54:46.636] [bmv2] [D] [thread 3665] [18.0] [cxt 0] Action entry is NoAction - 
+[01:54:46.636] [bmv2] [T] [thread 3665] [18.0] [cxt 0] Action NoAction
+[01:54:46.636] [bmv2] [T] [thread 3665] [18.0] [cxt 0] ipv10_forward.p4(156) Condition "hdr.ipv4_addr.isValid()" is false
+[01:54:46.636] [bmv2] [D] [thread 3665] [18.0] [cxt 0] Pipeline 'ingress': end
+[01:54:46.636] [bmv2] [D] [thread 3665] [18.0] [cxt 0] Egress port is 0
+[01:54:46.636] [bmv2] [D] [thread 3666] [18.0] [cxt 0] Pipeline 'egress': start
+[01:54:46.636] [bmv2] [D] [thread 3666] [18.0] [cxt 0] Pipeline 'egress': end
+[01:54:46.636] [bmv2] [D] [thread 3666] [18.0] [cxt 0] Deparser 'deparser': start
+[01:54:46.636] [bmv2] [D] [thread 3666] [18.0] [cxt 0] Deparsing header 'ethernet'
+[01:54:46.636] [bmv2] [D] [thread 3666] [18.0] [cxt 0] Deparsing header 'ipv10'
+[01:54:46.636] [bmv2] [D] [thread 3666] [18.0] [cxt 0] Deparsing header 'ipv6_addr'
+[01:54:46.636] [bmv2] [D] [thread 3666] [18.0] [cxt 0] Deparser 'deparser': end
+[01:54:46.636] [bmv2] [D] [thread 3670] [18.0] [cxt 0] Transmitting packet of size 110 out of port 0
+[01:54:46.720] [bmv2] [D] [thread 3665] [19.0] [cxt 0] Processing packet received on port 1
+[01:54:46.720] [bmv2] [D] [thread 3665] [19.0] [cxt 0] Parser 'parser': start
+[01:54:46.720] [bmv2] [D] [thread 3665] [19.0] [cxt 0] Extracting header 'ethernet'
+[01:54:46.720] [bmv2] [D] [thread 3665] [19.0] [cxt 0] Parser state 'start': key is 86dd
+[01:54:46.720] [bmv2] [T] [thread 3665] [19.0] [cxt 0] Bytes parsed: 14
+[01:54:46.720] [bmv2] [D] [thread 3665] [19.0] [cxt 0] Extracting header 'ipv10'
+[01:54:46.720] [bmv2] [D] [thread 3665] [19.0] [cxt 0] Parser set: setting field 'scalars.tmp_0' from lookahead (0, 32), new value is 4278321152
+[01:54:46.720] [bmv2] [D] [thread 3665] [19.0] [cxt 0] Parser state 'parse_ipv10': key is ff020000
+[01:54:46.720] [bmv2] [T] [thread 3665] [19.0] [cxt 0] Bytes parsed: 38
+[01:54:46.720] [bmv2] [D] [thread 3665] [19.0] [cxt 0] Extracting header 'ipv6_addr'
+[01:54:46.720] [bmv2] [D] [thread 3665] [19.0] [cxt 0] Parser state 'parse_ipv6_addr' has no switch, going to default next state
+[01:54:46.720] [bmv2] [T] [thread 3665] [19.0] [cxt 0] Bytes parsed: 54
+[01:54:46.720] [bmv2] [D] [thread 3665] [19.0] [cxt 0] Parser 'parser': end
+[01:54:46.720] [bmv2] [D] [thread 3665] [19.0] [cxt 0] Pipeline 'ingress': start
+[01:54:46.720] [bmv2] [T] [thread 3665] [19.0] [cxt 0] ipv10_forward.p4(153) Condition "hdr.ipv6_addr.isValid()" is true
+[01:54:46.720] [bmv2] [T] [thread 3665] [19.0] [cxt 0] Applying table 'ipv6_lpm'
+[01:54:46.720] [bmv2] [D] [thread 3665] [19.0] [cxt 0] Looking up key:
+* ipv6_addr.dstAddr   : ff020000000000000000000000000016
+
+[01:54:46.720] [bmv2] [D] [thread 3665] [19.0] [cxt 0] Table 'ipv6_lpm': miss
+[01:54:46.720] [bmv2] [D] [thread 3665] [19.0] [cxt 0] Action entry is NoAction - 
+[01:54:46.720] [bmv2] [T] [thread 3665] [19.0] [cxt 0] Action NoAction
+[01:54:46.720] [bmv2] [T] [thread 3665] [19.0] [cxt 0] ipv10_forward.p4(156) Condition "hdr.ipv4_addr.isValid()" is false
+[01:54:46.720] [bmv2] [D] [thread 3665] [19.0] [cxt 0] Pipeline 'ingress': end
+[01:54:46.720] [bmv2] [D] [thread 3665] [19.0] [cxt 0] Egress port is 0
+[01:54:46.720] [bmv2] [D] [thread 3666] [19.0] [cxt 0] Pipeline 'egress': start
+[01:54:46.720] [bmv2] [D] [thread 3666] [19.0] [cxt 0] Pipeline 'egress': end
+[01:54:46.720] [bmv2] [D] [thread 3666] [19.0] [cxt 0] Deparser 'deparser': start
+[01:54:46.720] [bmv2] [D] [thread 3666] [19.0] [cxt 0] Deparsing header 'ethernet'
+[01:54:46.720] [bmv2] [D] [thread 3666] [19.0] [cxt 0] Deparsing header 'ipv10'
+[01:54:46.720] [bmv2] [D] [thread 3666] [19.0] [cxt 0] Deparsing header 'ipv6_addr'
+[01:54:46.720] [bmv2] [D] [thread 3666] [19.0] [cxt 0] Deparser 'deparser': end
+[01:54:46.720] [bmv2] [D] [thread 3670] [19.0] [cxt 0] Transmitting packet of size 90 out of port 0
+[01:54:46.773] [bmv2] [D] [thread 3665] [20.0] [cxt 0] Processing packet received on port 2
+[01:54:46.774] [bmv2] [D] [thread 3665] [20.0] [cxt 0] Parser 'parser': start
+[01:54:46.774] [bmv2] [D] [thread 3665] [20.0] [cxt 0] Extracting header 'ethernet'
+[01:54:46.774] [bmv2] [D] [thread 3665] [20.0] [cxt 0] Parser state 'start': key is 86dd
+[01:54:46.774] [bmv2] [T] [thread 3665] [20.0] [cxt 0] Bytes parsed: 14
+[01:54:46.774] [bmv2] [D] [thread 3665] [20.0] [cxt 0] Extracting header 'ipv10'
+[01:54:46.774] [bmv2] [D] [thread 3665] [20.0] [cxt 0] Parser set: setting field 'scalars.tmp_0' from lookahead (0, 32), new value is 4278321152
+[01:54:46.774] [bmv2] [D] [thread 3665] [20.0] [cxt 0] Parser state 'parse_ipv10': key is ff020000
+[01:54:46.774] [bmv2] [T] [thread 3665] [20.0] [cxt 0] Bytes parsed: 38
+[01:54:46.774] [bmv2] [D] [thread 3665] [20.0] [cxt 0] Extracting header 'ipv6_addr'
+[01:54:46.774] [bmv2] [D] [thread 3665] [20.0] [cxt 0] Parser state 'parse_ipv6_addr' has no switch, going to default next state
+[01:54:46.774] [bmv2] [T] [thread 3665] [20.0] [cxt 0] Bytes parsed: 54
+[01:54:46.774] [bmv2] [D] [thread 3665] [20.0] [cxt 0] Parser 'parser': end
+[01:54:46.774] [bmv2] [D] [thread 3665] [20.0] [cxt 0] Pipeline 'ingress': start
+[01:54:46.774] [bmv2] [T] [thread 3665] [20.0] [cxt 0] ipv10_forward.p4(153) Condition "hdr.ipv6_addr.isValid()" is true
+[01:54:46.774] [bmv2] [T] [thread 3665] [20.0] [cxt 0] Applying table 'ipv6_lpm'
+[01:54:46.774] [bmv2] [D] [thread 3665] [20.0] [cxt 0] Looking up key:
+* ipv6_addr.dstAddr   : ff0200000000000000000000000000fb
+
+[01:54:46.774] [bmv2] [D] [thread 3665] [20.0] [cxt 0] Table 'ipv6_lpm': miss
+[01:54:46.774] [bmv2] [D] [thread 3665] [20.0] [cxt 0] Action entry is NoAction - 
+[01:54:46.774] [bmv2] [T] [thread 3665] [20.0] [cxt 0] Action NoAction
+[01:54:46.774] [bmv2] [T] [thread 3665] [20.0] [cxt 0] ipv10_forward.p4(156) Condition "hdr.ipv4_addr.isValid()" is false
+[01:54:46.774] [bmv2] [D] [thread 3665] [20.0] [cxt 0] Pipeline 'ingress': end
+[01:54:46.774] [bmv2] [D] [thread 3665] [20.0] [cxt 0] Egress port is 0
+[01:54:46.774] [bmv2] [D] [thread 3666] [20.0] [cxt 0] Pipeline 'egress': start
+[01:54:46.774] [bmv2] [D] [thread 3666] [20.0] [cxt 0] Pipeline 'egress': end
+[01:54:46.774] [bmv2] [D] [thread 3666] [20.0] [cxt 0] Deparser 'deparser': start
+[01:54:46.774] [bmv2] [D] [thread 3666] [20.0] [cxt 0] Deparsing header 'ethernet'
+[01:54:46.774] [bmv2] [D] [thread 3666] [20.0] [cxt 0] Deparsing header 'ipv10'
+[01:54:46.774] [bmv2] [D] [thread 3666] [20.0] [cxt 0] Deparsing header 'ipv6_addr'
+[01:54:46.774] [bmv2] [D] [thread 3666] [20.0] [cxt 0] Deparser 'deparser': end
+[01:54:46.775] [bmv2] [D] [thread 3670] [20.0] [cxt 0] Transmitting packet of size 303 out of port 0
+[01:54:46.781] [bmv2] [D] [thread 3665] [21.0] [cxt 0] Processing packet received on port 1
+[01:54:46.781] [bmv2] [D] [thread 3665] [21.0] [cxt 0] Parser 'parser': start
+[01:54:46.781] [bmv2] [D] [thread 3665] [21.0] [cxt 0] Extracting header 'ethernet'
+[01:54:46.781] [bmv2] [D] [thread 3665] [21.0] [cxt 0] Parser state 'start': key is 86dd
+[01:54:46.781] [bmv2] [T] [thread 3665] [21.0] [cxt 0] Bytes parsed: 14
+[01:54:46.781] [bmv2] [D] [thread 3665] [21.0] [cxt 0] Extracting header 'ipv10'
+[01:54:46.781] [bmv2] [D] [thread 3665] [21.0] [cxt 0] Parser set: setting field 'scalars.tmp_0' from lookahead (0, 32), new value is 4278321152
+[01:54:46.781] [bmv2] [D] [thread 3665] [21.0] [cxt 0] Parser state 'parse_ipv10': key is ff020000
+[01:54:46.781] [bmv2] [T] [thread 3665] [21.0] [cxt 0] Bytes parsed: 38
+[01:54:46.781] [bmv2] [D] [thread 3665] [21.0] [cxt 0] Extracting header 'ipv6_addr'
+[01:54:46.781] [bmv2] [D] [thread 3665] [21.0] [cxt 0] Parser state 'parse_ipv6_addr' has no switch, going to default next state
+[01:54:46.781] [bmv2] [T] [thread 3665] [21.0] [cxt 0] Bytes parsed: 54
+[01:54:46.781] [bmv2] [D] [thread 3665] [21.0] [cxt 0] Parser 'parser': end
+[01:54:46.782] [bmv2] [D] [thread 3665] [21.0] [cxt 0] Pipeline 'ingress': start
+[01:54:46.782] [bmv2] [T] [thread 3665] [21.0] [cxt 0] ipv10_forward.p4(153) Condition "hdr.ipv6_addr.isValid()" is true
+[01:54:46.782] [bmv2] [T] [thread 3665] [21.0] [cxt 0] Applying table 'ipv6_lpm'
+[01:54:46.782] [bmv2] [D] [thread 3665] [21.0] [cxt 0] Looking up key:
+* ipv6_addr.dstAddr   : ff0200000000000000000000000000fb
+
+[01:54:46.782] [bmv2] [D] [thread 3665] [21.0] [cxt 0] Table 'ipv6_lpm': miss
+[01:54:46.782] [bmv2] [D] [thread 3665] [21.0] [cxt 0] Action entry is NoAction - 
+[01:54:46.782] [bmv2] [T] [thread 3665] [21.0] [cxt 0] Action NoAction
+[01:54:46.782] [bmv2] [T] [thread 3665] [21.0] [cxt 0] ipv10_forward.p4(156) Condition "hdr.ipv4_addr.isValid()" is false
+[01:54:46.782] [bmv2] [D] [thread 3665] [21.0] [cxt 0] Pipeline 'ingress': end
+[01:54:46.782] [bmv2] [D] [thread 3665] [21.0] [cxt 0] Egress port is 0
+[01:54:46.782] [bmv2] [D] [thread 3666] [21.0] [cxt 0] Pipeline 'egress': start
+[01:54:46.783] [bmv2] [D] [thread 3666] [21.0] [cxt 0] Pipeline 'egress': end
+[01:54:46.783] [bmv2] [D] [thread 3666] [21.0] [cxt 0] Deparser 'deparser': start
+[01:54:46.783] [bmv2] [D] [thread 3666] [21.0] [cxt 0] Deparsing header 'ethernet'
+[01:54:46.783] [bmv2] [D] [thread 3666] [21.0] [cxt 0] Deparsing header 'ipv10'
+[01:54:46.783] [bmv2] [D] [thread 3666] [21.0] [cxt 0] Deparsing header 'ipv6_addr'
+[01:54:46.783] [bmv2] [D] [thread 3666] [21.0] [cxt 0] Deparser 'deparser': end
+[01:54:46.783] [bmv2] [D] [thread 3670] [21.0] [cxt 0] Transmitting packet of size 303 out of port 0
+[01:54:46.967] [bmv2] [D] [thread 3665] [22.0] [cxt 0] Processing packet received on port 2
+[01:54:46.967] [bmv2] [D] [thread 3665] [22.0] [cxt 0] Parser 'parser': start
+[01:54:46.967] [bmv2] [D] [thread 3665] [22.0] [cxt 0] Extracting header 'ethernet'
+[01:54:46.967] [bmv2] [D] [thread 3665] [22.0] [cxt 0] Parser state 'start': key is 86dd
+[01:54:46.967] [bmv2] [T] [thread 3665] [22.0] [cxt 0] Bytes parsed: 14
+[01:54:46.967] [bmv2] [D] [thread 3665] [22.0] [cxt 0] Extracting header 'ipv10'
+[01:54:46.967] [bmv2] [D] [thread 3665] [22.0] [cxt 0] Parser set: setting field 'scalars.tmp_0' from lookahead (0, 32), new value is 4278321152
+[01:54:46.967] [bmv2] [D] [thread 3665] [22.0] [cxt 0] Parser state 'parse_ipv10': key is ff020000
+[01:54:46.967] [bmv2] [T] [thread 3665] [22.0] [cxt 0] Bytes parsed: 38
+[01:54:46.967] [bmv2] [D] [thread 3665] [22.0] [cxt 0] Extracting header 'ipv6_addr'
+[01:54:46.967] [bmv2] [D] [thread 3665] [22.0] [cxt 0] Parser state 'parse_ipv6_addr' has no switch, going to default next state
+[01:54:46.967] [bmv2] [T] [thread 3665] [22.0] [cxt 0] Bytes parsed: 54
+[01:54:46.967] [bmv2] [D] [thread 3665] [22.0] [cxt 0] Parser 'parser': end
+[01:54:46.967] [bmv2] [D] [thread 3665] [22.0] [cxt 0] Pipeline 'ingress': start
+[01:54:46.967] [bmv2] [T] [thread 3665] [22.0] [cxt 0] ipv10_forward.p4(153) Condition "hdr.ipv6_addr.isValid()" is true
+[01:54:46.967] [bmv2] [T] [thread 3665] [22.0] [cxt 0] Applying table 'ipv6_lpm'
+[01:54:46.967] [bmv2] [D] [thread 3665] [22.0] [cxt 0] Looking up key:
+* ipv6_addr.dstAddr   : ff0200000000000000000000000000fb
+
+[01:54:46.967] [bmv2] [D] [thread 3665] [22.0] [cxt 0] Table 'ipv6_lpm': miss
+[01:54:46.967] [bmv2] [D] [thread 3665] [22.0] [cxt 0] Action entry is NoAction - 
+[01:54:46.967] [bmv2] [T] [thread 3665] [22.0] [cxt 0] Action NoAction
+[01:54:46.967] [bmv2] [T] [thread 3665] [22.0] [cxt 0] ipv10_forward.p4(156) Condition "hdr.ipv4_addr.isValid()" is false
+[01:54:46.967] [bmv2] [D] [thread 3665] [22.0] [cxt 0] Pipeline 'ingress': end
+[01:54:46.967] [bmv2] [D] [thread 3665] [22.0] [cxt 0] Egress port is 0
+[01:54:46.967] [bmv2] [D] [thread 3666] [22.0] [cxt 0] Pipeline 'egress': start
+[01:54:46.967] [bmv2] [D] [thread 3666] [22.0] [cxt 0] Pipeline 'egress': end
+[01:54:46.967] [bmv2] [D] [thread 3666] [22.0] [cxt 0] Deparser 'deparser': start
+[01:54:46.967] [bmv2] [D] [thread 3666] [22.0] [cxt 0] Deparsing header 'ethernet'
+[01:54:46.967] [bmv2] [D] [thread 3666] [22.0] [cxt 0] Deparsing header 'ipv10'
+[01:54:46.967] [bmv2] [D] [thread 3666] [22.0] [cxt 0] Deparsing header 'ipv6_addr'
+[01:54:46.967] [bmv2] [D] [thread 3666] [22.0] [cxt 0] Deparser 'deparser': end
+[01:54:46.967] [bmv2] [D] [thread 3670] [22.0] [cxt 0] Transmitting packet of size 107 out of port 0
+[01:54:46.975] [bmv2] [D] [thread 3665] [23.0] [cxt 0] Processing packet received on port 1
+[01:54:46.975] [bmv2] [D] [thread 3665] [23.0] [cxt 0] Parser 'parser': start
+[01:54:46.975] [bmv2] [D] [thread 3665] [23.0] [cxt 0] Extracting header 'ethernet'
+[01:54:46.975] [bmv2] [D] [thread 3665] [23.0] [cxt 0] Parser state 'start': key is 86dd
+[01:54:46.975] [bmv2] [T] [thread 3665] [23.0] [cxt 0] Bytes parsed: 14
+[01:54:46.975] [bmv2] [D] [thread 3665] [23.0] [cxt 0] Extracting header 'ipv10'
+[01:54:46.975] [bmv2] [D] [thread 3665] [23.0] [cxt 0] Parser set: setting field 'scalars.tmp_0' from lookahead (0, 32), new value is 4278321152
+[01:54:46.975] [bmv2] [D] [thread 3665] [23.0] [cxt 0] Parser state 'parse_ipv10': key is ff020000
+[01:54:46.975] [bmv2] [T] [thread 3665] [23.0] [cxt 0] Bytes parsed: 38
+[01:54:46.975] [bmv2] [D] [thread 3665] [23.0] [cxt 0] Extracting header 'ipv6_addr'
+[01:54:46.975] [bmv2] [D] [thread 3665] [23.0] [cxt 0] Parser state 'parse_ipv6_addr' has no switch, going to default next state
+[01:54:46.975] [bmv2] [T] [thread 3665] [23.0] [cxt 0] Bytes parsed: 54
+[01:54:46.975] [bmv2] [D] [thread 3665] [23.0] [cxt 0] Parser 'parser': end
+[01:54:46.975] [bmv2] [D] [thread 3665] [23.0] [cxt 0] Pipeline 'ingress': start
+[01:54:46.975] [bmv2] [T] [thread 3665] [23.0] [cxt 0] ipv10_forward.p4(153) Condition "hdr.ipv6_addr.isValid()" is true
+[01:54:46.975] [bmv2] [T] [thread 3665] [23.0] [cxt 0] Applying table 'ipv6_lpm'
+[01:54:46.975] [bmv2] [D] [thread 3665] [23.0] [cxt 0] Looking up key:
+* ipv6_addr.dstAddr   : ff0200000000000000000000000000fb
+
+[01:54:46.975] [bmv2] [D] [thread 3665] [23.0] [cxt 0] Table 'ipv6_lpm': miss
+[01:54:46.975] [bmv2] [D] [thread 3665] [23.0] [cxt 0] Action entry is NoAction - 
+[01:54:46.975] [bmv2] [T] [thread 3665] [23.0] [cxt 0] Action NoAction
+[01:54:46.975] [bmv2] [T] [thread 3665] [23.0] [cxt 0] ipv10_forward.p4(156) Condition "hdr.ipv4_addr.isValid()" is false
+[01:54:46.975] [bmv2] [D] [thread 3665] [23.0] [cxt 0] Pipeline 'ingress': end
+[01:54:46.975] [bmv2] [D] [thread 3665] [23.0] [cxt 0] Egress port is 0
+[01:54:46.975] [bmv2] [D] [thread 3666] [23.0] [cxt 0] Pipeline 'egress': start
+[01:54:46.975] [bmv2] [D] [thread 3666] [23.0] [cxt 0] Pipeline 'egress': end
+[01:54:46.975] [bmv2] [D] [thread 3666] [23.0] [cxt 0] Deparser 'deparser': start
+[01:54:46.975] [bmv2] [D] [thread 3666] [23.0] [cxt 0] Deparsing header 'ethernet'
+[01:54:46.975] [bmv2] [D] [thread 3666] [23.0] [cxt 0] Deparsing header 'ipv10'
+[01:54:46.975] [bmv2] [D] [thread 3666] [23.0] [cxt 0] Deparsing header 'ipv6_addr'
+[01:54:46.975] [bmv2] [D] [thread 3666] [23.0] [cxt 0] Deparser 'deparser': end
+[01:54:46.975] [bmv2] [D] [thread 3670] [23.0] [cxt 0] Transmitting packet of size 107 out of port 0
+[01:54:47.094] [bmv2] [D] [thread 3665] [24.0] [cxt 0] Processing packet received on port 2
+[01:54:47.094] [bmv2] [D] [thread 3665] [24.0] [cxt 0] Parser 'parser': start
+[01:54:47.094] [bmv2] [D] [thread 3665] [24.0] [cxt 0] Extracting header 'ethernet'
+[01:54:47.094] [bmv2] [D] [thread 3665] [24.0] [cxt 0] Parser state 'start': key is 0800
+[01:54:47.094] [bmv2] [T] [thread 3665] [24.0] [cxt 0] Bytes parsed: 14
+[01:54:47.094] [bmv2] [D] [thread 3665] [24.0] [cxt 0] Parser 'parser': end
+[01:54:47.094] [bmv2] [D] [thread 3665] [24.0] [cxt 0] Pipeline 'ingress': start
+[01:54:47.094] [bmv2] [T] [thread 3665] [24.0] [cxt 0] ipv10_forward.p4(153) Condition "hdr.ipv6_addr.isValid()" is false
+[01:54:47.094] [bmv2] [T] [thread 3665] [24.0] [cxt 0] ipv10_forward.p4(156) Condition "hdr.ipv4_addr.isValid()" is false
+[01:54:47.094] [bmv2] [D] [thread 3665] [24.0] [cxt 0] Pipeline 'ingress': end
+[01:54:47.094] [bmv2] [D] [thread 3665] [24.0] [cxt 0] Egress port is 0
+[01:54:47.094] [bmv2] [D] [thread 3666] [24.0] [cxt 0] Pipeline 'egress': start
+[01:54:47.094] [bmv2] [D] [thread 3666] [24.0] [cxt 0] Pipeline 'egress': end
+[01:54:47.094] [bmv2] [D] [thread 3666] [24.0] [cxt 0] Deparser 'deparser': start
+[01:54:47.094] [bmv2] [D] [thread 3666] [24.0] [cxt 0] Deparsing header 'ethernet'
+[01:54:47.094] [bmv2] [D] [thread 3666] [24.0] [cxt 0] Deparser 'deparser': end
+[01:54:47.094] [bmv2] [D] [thread 3670] [24.0] [cxt 0] Transmitting packet of size 342 out of port 0
+[01:54:47.266] [bmv2] [D] [thread 3665] [25.0] [cxt 0] Processing packet received on port 2
+[01:54:47.266] [bmv2] [D] [thread 3665] [25.0] [cxt 0] Parser 'parser': start
+[01:54:47.266] [bmv2] [D] [thread 3665] [25.0] [cxt 0] Extracting header 'ethernet'
+[01:54:47.266] [bmv2] [D] [thread 3665] [25.0] [cxt 0] Parser state 'start': key is 86dd
+[01:54:47.266] [bmv2] [T] [thread 3665] [25.0] [cxt 0] Bytes parsed: 14
+[01:54:47.266] [bmv2] [D] [thread 3665] [25.0] [cxt 0] Extracting header 'ipv10'
+[01:54:47.266] [bmv2] [D] [thread 3665] [25.0] [cxt 0] Parser set: setting field 'scalars.tmp_0' from lookahead (0, 32), new value is 4278321152
+[01:54:47.266] [bmv2] [D] [thread 3665] [25.0] [cxt 0] Parser state 'parse_ipv10': key is ff020000
+[01:54:47.266] [bmv2] [T] [thread 3665] [25.0] [cxt 0] Bytes parsed: 38
+[01:54:47.266] [bmv2] [D] [thread 3665] [25.0] [cxt 0] Extracting header 'ipv6_addr'
+[01:54:47.266] [bmv2] [D] [thread 3665] [25.0] [cxt 0] Parser state 'parse_ipv6_addr' has no switch, going to default next state
+[01:54:47.266] [bmv2] [T] [thread 3665] [25.0] [cxt 0] Bytes parsed: 54
+[01:54:47.266] [bmv2] [D] [thread 3665] [25.0] [cxt 0] Parser 'parser': end
+[01:54:47.266] [bmv2] [D] [thread 3665] [25.0] [cxt 0] Pipeline 'ingress': start
+[01:54:47.266] [bmv2] [T] [thread 3665] [25.0] [cxt 0] ipv10_forward.p4(153) Condition "hdr.ipv6_addr.isValid()" is true
+[01:54:47.266] [bmv2] [T] [thread 3665] [25.0] [cxt 0] Applying table 'ipv6_lpm'
+[01:54:47.266] [bmv2] [D] [thread 3665] [25.0] [cxt 0] Looking up key:
+* ipv6_addr.dstAddr   : ff0200000000000000000000000000fb
+
+[01:54:47.266] [bmv2] [D] [thread 3665] [25.0] [cxt 0] Table 'ipv6_lpm': miss
+[01:54:47.266] [bmv2] [D] [thread 3665] [25.0] [cxt 0] Action entry is NoAction - 
+[01:54:47.266] [bmv2] [T] [thread 3665] [25.0] [cxt 0] Action NoAction
+[01:54:47.266] [bmv2] [T] [thread 3665] [25.0] [cxt 0] ipv10_forward.p4(156) Condition "hdr.ipv4_addr.isValid()" is false
+[01:54:47.266] [bmv2] [D] [thread 3665] [25.0] [cxt 0] Pipeline 'ingress': end
+[01:54:47.266] [bmv2] [D] [thread 3665] [25.0] [cxt 0] Egress port is 0
+[01:54:47.266] [bmv2] [D] [thread 3665] [26.0] [cxt 0] Processing packet received on port 1
+[01:54:47.266] [bmv2] [D] [thread 3665] [26.0] [cxt 0] Parser 'parser': start
+[01:54:47.266] [bmv2] [D] [thread 3665] [26.0] [cxt 0] Extracting header 'ethernet'
+[01:54:47.266] [bmv2] [D] [thread 3666] [25.0] [cxt 0] Pipeline 'egress': start
+[01:54:47.266] [bmv2] [D] [thread 3666] [25.0] [cxt 0] Pipeline 'egress': end
+[01:54:47.266] [bmv2] [D] [thread 3666] [25.0] [cxt 0] Deparser 'deparser': start
+[01:54:47.266] [bmv2] [D] [thread 3666] [25.0] [cxt 0] Deparsing header 'ethernet'
+[01:54:47.266] [bmv2] [D] [thread 3666] [25.0] [cxt 0] Deparsing header 'ipv10'
+[01:54:47.266] [bmv2] [D] [thread 3666] [25.0] [cxt 0] Deparsing header 'ipv6_addr'
+[01:54:47.266] [bmv2] [D] [thread 3666] [25.0] [cxt 0] Deparser 'deparser': end
+[01:54:47.266] [bmv2] [D] [thread 3670] [25.0] [cxt 0] Transmitting packet of size 175 out of port 0
+[01:54:47.266] [bmv2] [D] [thread 3665] [26.0] [cxt 0] Parser state 'start': key is 86dd
+[01:54:47.266] [bmv2] [T] [thread 3665] [26.0] [cxt 0] Bytes parsed: 14
+[01:54:47.266] [bmv2] [D] [thread 3665] [26.0] [cxt 0] Extracting header 'ipv10'
+[01:54:47.266] [bmv2] [D] [thread 3665] [26.0] [cxt 0] Parser set: setting field 'scalars.tmp_0' from lookahead (0, 32), new value is 4278321152
+[01:54:47.266] [bmv2] [D] [thread 3665] [26.0] [cxt 0] Parser state 'parse_ipv10': key is ff020000
+[01:54:47.266] [bmv2] [T] [thread 3665] [26.0] [cxt 0] Bytes parsed: 38
+[01:54:47.266] [bmv2] [D] [thread 3665] [26.0] [cxt 0] Extracting header 'ipv6_addr'
+[01:54:47.266] [bmv2] [D] [thread 3665] [26.0] [cxt 0] Parser state 'parse_ipv6_addr' has no switch, going to default next state
+[01:54:47.266] [bmv2] [T] [thread 3665] [26.0] [cxt 0] Bytes parsed: 54
+[01:54:47.266] [bmv2] [D] [thread 3665] [26.0] [cxt 0] Parser 'parser': end
+[01:54:47.266] [bmv2] [D] [thread 3665] [26.0] [cxt 0] Pipeline 'ingress': start
+[01:54:47.266] [bmv2] [T] [thread 3665] [26.0] [cxt 0] ipv10_forward.p4(153) Condition "hdr.ipv6_addr.isValid()" is true
+[01:54:47.266] [bmv2] [T] [thread 3665] [26.0] [cxt 0] Applying table 'ipv6_lpm'
+[01:54:47.267] [bmv2] [D] [thread 3665] [26.0] [cxt 0] Looking up key:
+* ipv6_addr.dstAddr   : ff0200000000000000000000000000fb
+
+[01:54:47.267] [bmv2] [D] [thread 3665] [26.0] [cxt 0] Table 'ipv6_lpm': miss
+[01:54:47.267] [bmv2] [D] [thread 3665] [26.0] [cxt 0] Action entry is NoAction - 
+[01:54:47.267] [bmv2] [T] [thread 3665] [26.0] [cxt 0] Action NoAction
+[01:54:47.267] [bmv2] [T] [thread 3665] [26.0] [cxt 0] ipv10_forward.p4(156) Condition "hdr.ipv4_addr.isValid()" is false
+[01:54:47.267] [bmv2] [D] [thread 3665] [26.0] [cxt 0] Pipeline 'ingress': end
+[01:54:47.267] [bmv2] [D] [thread 3665] [26.0] [cxt 0] Egress port is 0
+[01:54:47.267] [bmv2] [D] [thread 3666] [26.0] [cxt 0] Pipeline 'egress': start
+[01:54:47.267] [bmv2] [D] [thread 3666] [26.0] [cxt 0] Pipeline 'egress': end
+[01:54:47.267] [bmv2] [D] [thread 3666] [26.0] [cxt 0] Deparser 'deparser': start
+[01:54:47.267] [bmv2] [D] [thread 3666] [26.0] [cxt 0] Deparsing header 'ethernet'
+[01:54:47.267] [bmv2] [D] [thread 3666] [26.0] [cxt 0] Deparsing header 'ipv10'
+[01:54:47.267] [bmv2] [D] [thread 3666] [26.0] [cxt 0] Deparsing header 'ipv6_addr'
+[01:54:47.267] [bmv2] [D] [thread 3666] [26.0] [cxt 0] Deparser 'deparser': end
+[01:54:47.267] [bmv2] [D] [thread 3670] [26.0] [cxt 0] Transmitting packet of size 175 out of port 0
+[01:54:47.584] [bmv2] [T] [thread 3695] bm_get_config
+[01:54:47.640] [bmv2] [T] [thread 3695] bm_set_default_action
+[01:54:47.640] [bmv2] [D] [thread 3695] Set default entry for table 'ipv4_lpm': drop - 
+[01:54:47.641] [bmv2] [T] [thread 3695] bm_set_default_action
+[01:54:47.641] [bmv2] [D] [thread 3695] Set default entry for table 'ipv6_lpm': drop - 
+[01:54:47.660] [bmv2] [T] [thread 3695] bm_table_add_entry
+[01:54:47.660] [bmv2] [D] [thread 3695] Entry 0 added to table 'ipv6_lpm'
+[01:54:47.660] [bmv2] [D] [thread 3695] Dumping entry 0
+Match key:
+* ipv6_addr.dstAddr   : LPM       fe800000000000000000000000005678/128
+Action entry: ipv6_forward - 400000002,2,
+
+[01:54:47.661] [bmv2] [T] [thread 3695] bm_table_add_entry
+[01:54:47.661] [bmv2] [D] [thread 3695] Entry 0 added to table 'ipv4_lpm'
+[01:54:47.661] [bmv2] [D] [thread 3695] Dumping entry 0
+Match key:
+* ipv4_addr.dstAddr   : LPM       0a00020a/32
+Action entry: ipv4_forward - 400000002,2,
+
+[01:54:47.877] [bmv2] [D] [thread 3665] [27.0] [cxt 0] Processing packet received on port 1
+[01:54:47.877] [bmv2] [D] [thread 3665] [27.0] [cxt 0] Parser 'parser': start
+[01:54:47.877] [bmv2] [D] [thread 3665] [27.0] [cxt 0] Extracting header 'ethernet'
+[01:54:47.878] [bmv2] [D] [thread 3665] [27.0] [cxt 0] Parser state 'start': key is 0800
+[01:54:47.878] [bmv2] [T] [thread 3665] [27.0] [cxt 0] Bytes parsed: 14
+[01:54:47.879] [bmv2] [D] [thread 3665] [27.0] [cxt 0] Parser 'parser': end
+[01:54:47.879] [bmv2] [D] [thread 3665] [27.0] [cxt 0] Pipeline 'ingress': start
+[01:54:47.879] [bmv2] [T] [thread 3665] [27.0] [cxt 0] ipv10_forward.p4(153) Condition "hdr.ipv6_addr.isValid()" is false
+[01:54:47.879] [bmv2] [T] [thread 3665] [27.0] [cxt 0] ipv10_forward.p4(156) Condition "hdr.ipv4_addr.isValid()" is false
+[01:54:47.879] [bmv2] [D] [thread 3665] [27.0] [cxt 0] Pipeline 'ingress': end
+[01:54:47.880] [bmv2] [D] [thread 3665] [27.0] [cxt 0] Egress port is 0
+[01:54:47.880] [bmv2] [D] [thread 3666] [27.0] [cxt 0] Pipeline 'egress': start
+[01:54:47.880] [bmv2] [D] [thread 3666] [27.0] [cxt 0] Pipeline 'egress': end
+[01:54:47.880] [bmv2] [D] [thread 3666] [27.0] [cxt 0] Deparser 'deparser': start
+[01:54:47.880] [bmv2] [D] [thread 3666] [27.0] [cxt 0] Deparsing header 'ethernet'
+[01:54:47.880] [bmv2] [D] [thread 3666] [27.0] [cxt 0] Deparser 'deparser': end
+[01:54:47.880] [bmv2] [D] [thread 3670] [27.0] [cxt 0] Transmitting packet of size 342 out of port 0
+[01:54:47.928] [bmv2] [D] [thread 3665] [28.0] [cxt 0] Processing packet received on port 2
+[01:54:47.928] [bmv2] [D] [thread 3665] [28.0] [cxt 0] Parser 'parser': start
+[01:54:47.928] [bmv2] [D] [thread 3665] [28.0] [cxt 0] Extracting header 'ethernet'
+[01:54:47.928] [bmv2] [D] [thread 3665] [28.0] [cxt 0] Parser state 'start': key is 86dd
+[01:54:47.928] [bmv2] [T] [thread 3665] [28.0] [cxt 0] Bytes parsed: 14
+[01:54:47.928] [bmv2] [D] [thread 3665] [28.0] [cxt 0] Extracting header 'ipv10'
+[01:54:47.928] [bmv2] [D] [thread 3665] [28.0] [cxt 0] Parser set: setting field 'scalars.tmp_0' from lookahead (0, 32), new value is 4278321152
+[01:54:47.928] [bmv2] [D] [thread 3665] [28.0] [cxt 0] Parser state 'parse_ipv10': key is ff020000
+[01:54:47.928] [bmv2] [T] [thread 3665] [28.0] [cxt 0] Bytes parsed: 38
+[01:54:47.928] [bmv2] [D] [thread 3665] [28.0] [cxt 0] Extracting header 'ipv6_addr'
+[01:54:47.928] [bmv2] [D] [thread 3665] [28.0] [cxt 0] Parser state 'parse_ipv6_addr' has no switch, going to default next state
+[01:54:47.928] [bmv2] [T] [thread 3665] [28.0] [cxt 0] Bytes parsed: 54
+[01:54:47.928] [bmv2] [D] [thread 3665] [28.0] [cxt 0] Parser 'parser': end
+[01:54:47.928] [bmv2] [D] [thread 3665] [28.0] [cxt 0] Pipeline 'ingress': start
+[01:54:47.928] [bmv2] [T] [thread 3665] [28.0] [cxt 0] ipv10_forward.p4(153) Condition "hdr.ipv6_addr.isValid()" is true
+[01:54:47.928] [bmv2] [T] [thread 3665] [28.0] [cxt 0] Applying table 'ipv6_lpm'
+[01:54:47.928] [bmv2] [D] [thread 3665] [28.0] [cxt 0] Looking up key:
+* ipv6_addr.dstAddr   : ff0200000000000000000000000000fb
+
+[01:54:47.928] [bmv2] [D] [thread 3665] [28.0] [cxt 0] Table 'ipv6_lpm': miss
+[01:54:47.928] [bmv2] [D] [thread 3665] [28.0] [cxt 0] Action entry is drop - 
+[01:54:47.928] [bmv2] [T] [thread 3665] [28.0] [cxt 0] Action drop
+[01:54:47.928] [bmv2] [T] [thread 3665] [28.0] [cxt 0] ipv10_forward.p4(110) Primitive mark_to_drop()
+[01:54:47.928] [bmv2] [T] [thread 3665] [28.0] [cxt 0] ipv10_forward.p4(156) Condition "hdr.ipv4_addr.isValid()" is false
+[01:54:47.928] [bmv2] [D] [thread 3665] [28.0] [cxt 0] Pipeline 'ingress': end
+[01:54:47.928] [bmv2] [D] [thread 3665] [28.0] [cxt 0] Egress port is 511
+[01:54:47.928] [bmv2] [D] [thread 3665] [28.0] [cxt 0] Dropping packet at the end of ingress
+[01:54:47.935] [bmv2] [D] [thread 3665] [29.0] [cxt 0] Processing packet received on port 1
+[01:54:47.935] [bmv2] [D] [thread 3665] [29.0] [cxt 0] Parser 'parser': start
+[01:54:47.935] [bmv2] [D] [thread 3665] [29.0] [cxt 0] Extracting header 'ethernet'
+[01:54:47.935] [bmv2] [D] [thread 3665] [29.0] [cxt 0] Parser state 'start': key is 86dd
+[01:54:47.935] [bmv2] [T] [thread 3665] [29.0] [cxt 0] Bytes parsed: 14
+[01:54:47.935] [bmv2] [D] [thread 3665] [29.0] [cxt 0] Extracting header 'ipv10'
+[01:54:47.935] [bmv2] [D] [thread 3665] [29.0] [cxt 0] Parser set: setting field 'scalars.tmp_0' from lookahead (0, 32), new value is 4278321152
+[01:54:47.935] [bmv2] [D] [thread 3665] [29.0] [cxt 0] Parser state 'parse_ipv10': key is ff020000
+[01:54:47.935] [bmv2] [T] [thread 3665] [29.0] [cxt 0] Bytes parsed: 38
+[01:54:47.935] [bmv2] [D] [thread 3665] [29.0] [cxt 0] Extracting header 'ipv6_addr'
+[01:54:47.935] [bmv2] [D] [thread 3665] [29.0] [cxt 0] Parser state 'parse_ipv6_addr' has no switch, going to default next state
+[01:54:47.935] [bmv2] [T] [thread 3665] [29.0] [cxt 0] Bytes parsed: 54
+[01:54:47.935] [bmv2] [D] [thread 3665] [29.0] [cxt 0] Parser 'parser': end
+[01:54:47.935] [bmv2] [D] [thread 3665] [29.0] [cxt 0] Pipeline 'ingress': start
+[01:54:47.935] [bmv2] [T] [thread 3665] [29.0] [cxt 0] ipv10_forward.p4(153) Condition "hdr.ipv6_addr.isValid()" is true
+[01:54:47.935] [bmv2] [T] [thread 3665] [29.0] [cxt 0] Applying table 'ipv6_lpm'
+[01:54:47.935] [bmv2] [D] [thread 3665] [29.0] [cxt 0] Looking up key:
+* ipv6_addr.dstAddr   : ff0200000000000000000000000000fb
+
+[01:54:47.935] [bmv2] [D] [thread 3665] [29.0] [cxt 0] Table 'ipv6_lpm': miss
+[01:54:47.935] [bmv2] [D] [thread 3665] [29.0] [cxt 0] Action entry is drop - 
+[01:54:47.935] [bmv2] [T] [thread 3665] [29.0] [cxt 0] Action drop
+[01:54:47.935] [bmv2] [T] [thread 3665] [29.0] [cxt 0] ipv10_forward.p4(110) Primitive mark_to_drop()
+[01:54:47.935] [bmv2] [T] [thread 3665] [29.0] [cxt 0] ipv10_forward.p4(156) Condition "hdr.ipv4_addr.isValid()" is false
+[01:54:47.935] [bmv2] [D] [thread 3665] [29.0] [cxt 0] Pipeline 'ingress': end
+[01:54:47.935] [bmv2] [D] [thread 3665] [29.0] [cxt 0] Egress port is 511
+[01:54:47.935] [bmv2] [D] [thread 3665] [29.0] [cxt 0] Dropping packet at the end of ingress
+[01:54:48.967] [bmv2] [D] [thread 3665] [30.0] [cxt 0] Processing packet received on port 2
+[01:54:48.967] [bmv2] [D] [thread 3665] [30.0] [cxt 0] Parser 'parser': start
+[01:54:48.967] [bmv2] [D] [thread 3665] [30.0] [cxt 0] Extracting header 'ethernet'
+[01:54:48.967] [bmv2] [D] [thread 3665] [30.0] [cxt 0] Parser state 'start': key is 86dd
+[01:54:48.967] [bmv2] [T] [thread 3665] [30.0] [cxt 0] Bytes parsed: 14
+[01:54:48.967] [bmv2] [D] [thread 3665] [30.0] [cxt 0] Extracting header 'ipv10'
+[01:54:48.967] [bmv2] [D] [thread 3665] [30.0] [cxt 0] Parser set: setting field 'scalars.tmp_0' from lookahead (0, 32), new value is 4278321152
+[01:54:48.967] [bmv2] [D] [thread 3665] [30.0] [cxt 0] Parser state 'parse_ipv10': key is ff020000
+[01:54:48.967] [bmv2] [T] [thread 3665] [30.0] [cxt 0] Bytes parsed: 38
+[01:54:48.967] [bmv2] [D] [thread 3665] [30.0] [cxt 0] Extracting header 'ipv6_addr'
+[01:54:48.967] [bmv2] [D] [thread 3665] [30.0] [cxt 0] Parser state 'parse_ipv6_addr' has no switch, going to default next state
+[01:54:48.967] [bmv2] [T] [thread 3665] [30.0] [cxt 0] Bytes parsed: 54
+[01:54:48.967] [bmv2] [D] [thread 3665] [30.0] [cxt 0] Parser 'parser': end
+[01:54:48.967] [bmv2] [D] [thread 3665] [30.0] [cxt 0] Pipeline 'ingress': start
+[01:54:48.968] [bmv2] [T] [thread 3665] [30.0] [cxt 0] ipv10_forward.p4(153) Condition "hdr.ipv6_addr.isValid()" is true
+[01:54:48.968] [bmv2] [T] [thread 3665] [30.0] [cxt 0] Applying table 'ipv6_lpm'
+[01:54:48.968] [bmv2] [D] [thread 3665] [30.0] [cxt 0] Looking up key:
+* ipv6_addr.dstAddr   : ff0200000000000000000000000000fb
+
+[01:54:48.968] [bmv2] [D] [thread 3665] [30.0] [cxt 0] Table 'ipv6_lpm': miss
+[01:54:48.968] [bmv2] [D] [thread 3665] [30.0] [cxt 0] Action entry is drop - 
+[01:54:48.968] [bmv2] [T] [thread 3665] [30.0] [cxt 0] Action drop
+[01:54:48.968] [bmv2] [T] [thread 3665] [30.0] [cxt 0] ipv10_forward.p4(110) Primitive mark_to_drop()
+[01:54:48.968] [bmv2] [T] [thread 3665] [30.0] [cxt 0] ipv10_forward.p4(156) Condition "hdr.ipv4_addr.isValid()" is false
+[01:54:48.968] [bmv2] [D] [thread 3665] [30.0] [cxt 0] Pipeline 'ingress': end
+[01:54:48.968] [bmv2] [D] [thread 3665] [30.0] [cxt 0] Egress port is 511
+[01:54:48.968] [bmv2] [D] [thread 3665] [30.0] [cxt 0] Dropping packet at the end of ingress
+[01:54:48.977] [bmv2] [D] [thread 3665] [31.0] [cxt 0] Processing packet received on port 1
+[01:54:48.977] [bmv2] [D] [thread 3665] [31.0] [cxt 0] Parser 'parser': start
+[01:54:48.977] [bmv2] [D] [thread 3665] [31.0] [cxt 0] Extracting header 'ethernet'
+[01:54:48.977] [bmv2] [D] [thread 3665] [31.0] [cxt 0] Parser state 'start': key is 86dd
+[01:54:48.977] [bmv2] [T] [thread 3665] [31.0] [cxt 0] Bytes parsed: 14
+[01:54:48.977] [bmv2] [D] [thread 3665] [31.0] [cxt 0] Extracting header 'ipv10'
+[01:54:48.977] [bmv2] [D] [thread 3665] [31.0] [cxt 0] Parser set: setting field 'scalars.tmp_0' from lookahead (0, 32), new value is 4278321152
+[01:54:48.977] [bmv2] [D] [thread 3665] [31.0] [cxt 0] Parser state 'parse_ipv10': key is ff020000
+[01:54:48.977] [bmv2] [T] [thread 3665] [31.0] [cxt 0] Bytes parsed: 38
+[01:54:48.977] [bmv2] [D] [thread 3665] [31.0] [cxt 0] Extracting header 'ipv6_addr'
+[01:54:48.977] [bmv2] [D] [thread 3665] [31.0] [cxt 0] Parser state 'parse_ipv6_addr' has no switch, going to default next state
+[01:54:48.977] [bmv2] [T] [thread 3665] [31.0] [cxt 0] Bytes parsed: 54
+[01:54:48.977] [bmv2] [D] [thread 3665] [31.0] [cxt 0] Parser 'parser': end
+[01:54:48.977] [bmv2] [D] [thread 3665] [31.0] [cxt 0] Pipeline 'ingress': start
+[01:54:48.977] [bmv2] [T] [thread 3665] [31.0] [cxt 0] ipv10_forward.p4(153) Condition "hdr.ipv6_addr.isValid()" is true
+[01:54:48.977] [bmv2] [T] [thread 3665] [31.0] [cxt 0] Applying table 'ipv6_lpm'
+[01:54:48.977] [bmv2] [D] [thread 3665] [31.0] [cxt 0] Looking up key:
+* ipv6_addr.dstAddr   : ff0200000000000000000000000000fb
+
+[01:54:48.977] [bmv2] [D] [thread 3665] [31.0] [cxt 0] Table 'ipv6_lpm': miss
+[01:54:48.977] [bmv2] [D] [thread 3665] [31.0] [cxt 0] Action entry is drop - 
+[01:54:48.977] [bmv2] [T] [thread 3665] [31.0] [cxt 0] Action drop
+[01:54:48.977] [bmv2] [T] [thread 3665] [31.0] [cxt 0] ipv10_forward.p4(110) Primitive mark_to_drop()
+[01:54:48.977] [bmv2] [T] [thread 3665] [31.0] [cxt 0] ipv10_forward.p4(156) Condition "hdr.ipv4_addr.isValid()" is false
+[01:54:48.977] [bmv2] [D] [thread 3665] [31.0] [cxt 0] Pipeline 'ingress': end
+[01:54:48.978] [bmv2] [D] [thread 3665] [31.0] [cxt 0] Egress port is 511
+[01:54:48.978] [bmv2] [D] [thread 3665] [31.0] [cxt 0] Dropping packet at the end of ingress
+[01:54:49.411] [bmv2] [D] [thread 3665] [32.0] [cxt 0] Processing packet received on port 2
+[01:54:49.412] [bmv2] [D] [thread 3665] [32.0] [cxt 0] Parser 'parser': start
+[01:54:49.412] [bmv2] [D] [thread 3665] [32.0] [cxt 0] Extracting header 'ethernet'
+[01:54:49.412] [bmv2] [D] [thread 3665] [32.0] [cxt 0] Parser state 'start': key is 86dd
+[01:54:49.412] [bmv2] [T] [thread 3665] [32.0] [cxt 0] Bytes parsed: 14
+[01:54:49.412] [bmv2] [D] [thread 3665] [32.0] [cxt 0] Extracting header 'ipv10'
+[01:54:49.412] [bmv2] [D] [thread 3665] [32.0] [cxt 0] Parser set: setting field 'scalars.tmp_0' from lookahead (0, 32), new value is 4278321152
+[01:54:49.412] [bmv2] [D] [thread 3665] [32.0] [cxt 0] Parser state 'parse_ipv10': key is ff020000
+[01:54:49.412] [bmv2] [T] [thread 3665] [32.0] [cxt 0] Bytes parsed: 38
+[01:54:49.412] [bmv2] [D] [thread 3665] [32.0] [cxt 0] Extracting header 'ipv6_addr'
+[01:54:49.412] [bmv2] [D] [thread 3665] [32.0] [cxt 0] Parser state 'parse_ipv6_addr' has no switch, going to default next state
+[01:54:49.412] [bmv2] [T] [thread 3665] [32.0] [cxt 0] Bytes parsed: 54
+[01:54:49.412] [bmv2] [D] [thread 3665] [32.0] [cxt 0] Parser 'parser': end
+[01:54:49.412] [bmv2] [D] [thread 3665] [32.0] [cxt 0] Pipeline 'ingress': start
+[01:54:49.412] [bmv2] [T] [thread 3665] [32.0] [cxt 0] ipv10_forward.p4(153) Condition "hdr.ipv6_addr.isValid()" is true
+[01:54:49.412] [bmv2] [T] [thread 3665] [32.0] [cxt 0] Applying table 'ipv6_lpm'
+[01:54:49.412] [bmv2] [D] [thread 3665] [32.0] [cxt 0] Looking up key:
+* ipv6_addr.dstAddr   : ff0200000000000000000000000000fb
+
+[01:54:49.412] [bmv2] [D] [thread 3665] [32.0] [cxt 0] Table 'ipv6_lpm': miss
+[01:54:49.412] [bmv2] [D] [thread 3665] [32.0] [cxt 0] Action entry is drop - 
+[01:54:49.412] [bmv2] [T] [thread 3665] [32.0] [cxt 0] Action drop
+[01:54:49.412] [bmv2] [T] [thread 3665] [32.0] [cxt 0] ipv10_forward.p4(110) Primitive mark_to_drop()
+[01:54:49.412] [bmv2] [T] [thread 3665] [32.0] [cxt 0] ipv10_forward.p4(156) Condition "hdr.ipv4_addr.isValid()" is false
+[01:54:49.412] [bmv2] [D] [thread 3665] [32.0] [cxt 0] Pipeline 'ingress': end
+[01:54:49.412] [bmv2] [D] [thread 3665] [32.0] [cxt 0] Egress port is 511
+[01:54:49.412] [bmv2] [D] [thread 3665] [32.0] [cxt 0] Dropping packet at the end of ingress
+[01:54:49.420] [bmv2] [D] [thread 3665] [33.0] [cxt 0] Processing packet received on port 1
+[01:54:49.420] [bmv2] [D] [thread 3665] [33.0] [cxt 0] Parser 'parser': start
+[01:54:49.420] [bmv2] [D] [thread 3665] [33.0] [cxt 0] Extracting header 'ethernet'
+[01:54:49.420] [bmv2] [D] [thread 3665] [33.0] [cxt 0] Parser state 'start': key is 86dd
+[01:54:49.420] [bmv2] [T] [thread 3665] [33.0] [cxt 0] Bytes parsed: 14
+[01:54:49.420] [bmv2] [D] [thread 3665] [33.0] [cxt 0] Extracting header 'ipv10'
+[01:54:49.420] [bmv2] [D] [thread 3665] [33.0] [cxt 0] Parser set: setting field 'scalars.tmp_0' from lookahead (0, 32), new value is 4278321152
+[01:54:49.420] [bmv2] [D] [thread 3665] [33.0] [cxt 0] Parser state 'parse_ipv10': key is ff020000
+[01:54:49.420] [bmv2] [T] [thread 3665] [33.0] [cxt 0] Bytes parsed: 38
+[01:54:49.420] [bmv2] [D] [thread 3665] [33.0] [cxt 0] Extracting header 'ipv6_addr'
+[01:54:49.420] [bmv2] [D] [thread 3665] [33.0] [cxt 0] Parser state 'parse_ipv6_addr' has no switch, going to default next state
+[01:54:49.420] [bmv2] [T] [thread 3665] [33.0] [cxt 0] Bytes parsed: 54
+[01:54:49.420] [bmv2] [D] [thread 3665] [33.0] [cxt 0] Parser 'parser': end
+[01:54:49.420] [bmv2] [D] [thread 3665] [33.0] [cxt 0] Pipeline 'ingress': start
+[01:54:49.420] [bmv2] [T] [thread 3665] [33.0] [cxt 0] ipv10_forward.p4(153) Condition "hdr.ipv6_addr.isValid()" is true
+[01:54:49.420] [bmv2] [T] [thread 3665] [33.0] [cxt 0] Applying table 'ipv6_lpm'
+[01:54:49.420] [bmv2] [D] [thread 3665] [33.0] [cxt 0] Looking up key:
+* ipv6_addr.dstAddr   : ff0200000000000000000000000000fb
+
+[01:54:49.420] [bmv2] [D] [thread 3665] [33.0] [cxt 0] Table 'ipv6_lpm': miss
+[01:54:49.420] [bmv2] [D] [thread 3665] [33.0] [cxt 0] Action entry is drop - 
+[01:54:49.420] [bmv2] [T] [thread 3665] [33.0] [cxt 0] Action drop
+[01:54:49.420] [bmv2] [T] [thread 3665] [33.0] [cxt 0] ipv10_forward.p4(110) Primitive mark_to_drop()
+[01:54:49.420] [bmv2] [T] [thread 3665] [33.0] [cxt 0] ipv10_forward.p4(156) Condition "hdr.ipv4_addr.isValid()" is false
+[01:54:49.420] [bmv2] [D] [thread 3665] [33.0] [cxt 0] Pipeline 'ingress': end
+[01:54:49.420] [bmv2] [D] [thread 3665] [33.0] [cxt 0] Egress port is 511
+[01:54:49.420] [bmv2] [D] [thread 3665] [33.0] [cxt 0] Dropping packet at the end of ingress
+[01:54:49.868] [bmv2] [D] [thread 3665] [34.0] [cxt 0] Processing packet received on port 2
+[01:54:49.868] [bmv2] [D] [thread 3665] [34.0] [cxt 0] Parser 'parser': start
+[01:54:49.868] [bmv2] [D] [thread 3665] [34.0] [cxt 0] Extracting header 'ethernet'
+[01:54:49.868] [bmv2] [D] [thread 3665] [34.0] [cxt 0] Parser state 'start': key is 86dd
+[01:54:49.868] [bmv2] [T] [thread 3665] [34.0] [cxt 0] Bytes parsed: 14
+[01:54:49.868] [bmv2] [D] [thread 3665] [34.0] [cxt 0] Extracting header 'ipv10'
+[01:54:49.868] [bmv2] [D] [thread 3665] [34.0] [cxt 0] Parser set: setting field 'scalars.tmp_0' from lookahead (0, 32), new value is 4278321152
+[01:54:49.868] [bmv2] [D] [thread 3665] [34.0] [cxt 0] Parser state 'parse_ipv10': key is ff020000
+[01:54:49.868] [bmv2] [T] [thread 3665] [34.0] [cxt 0] Bytes parsed: 38
+[01:54:49.868] [bmv2] [D] [thread 3665] [34.0] [cxt 0] Extracting header 'ipv6_addr'
+[01:54:49.868] [bmv2] [D] [thread 3665] [34.0] [cxt 0] Parser state 'parse_ipv6_addr' has no switch, going to default next state
+[01:54:49.868] [bmv2] [T] [thread 3665] [34.0] [cxt 0] Bytes parsed: 54
+[01:54:49.868] [bmv2] [D] [thread 3665] [34.0] [cxt 0] Parser 'parser': end
+[01:54:49.868] [bmv2] [D] [thread 3665] [34.0] [cxt 0] Pipeline 'ingress': start
+[01:54:49.868] [bmv2] [T] [thread 3665] [34.0] [cxt 0] ipv10_forward.p4(153) Condition "hdr.ipv6_addr.isValid()" is true
+[01:54:49.868] [bmv2] [T] [thread 3665] [34.0] [cxt 0] Applying table 'ipv6_lpm'
+[01:54:49.868] [bmv2] [D] [thread 3665] [34.0] [cxt 0] Looking up key:
+* ipv6_addr.dstAddr   : ff020000000000000000000000000002
+
+[01:54:49.868] [bmv2] [D] [thread 3665] [34.0] [cxt 0] Table 'ipv6_lpm': miss
+[01:54:49.868] [bmv2] [D] [thread 3665] [34.0] [cxt 0] Action entry is drop - 
+[01:54:49.868] [bmv2] [T] [thread 3665] [34.0] [cxt 0] Action drop
+[01:54:49.868] [bmv2] [T] [thread 3665] [34.0] [cxt 0] ipv10_forward.p4(110) Primitive mark_to_drop()
+[01:54:49.868] [bmv2] [T] [thread 3665] [34.0] [cxt 0] ipv10_forward.p4(156) Condition "hdr.ipv4_addr.isValid()" is false
+[01:54:49.868] [bmv2] [D] [thread 3665] [34.0] [cxt 0] Pipeline 'ingress': end
+[01:54:49.868] [bmv2] [D] [thread 3665] [34.0] [cxt 0] Egress port is 511
+[01:54:49.868] [bmv2] [D] [thread 3665] [34.0] [cxt 0] Dropping packet at the end of ingress
+[01:54:49.884] [bmv2] [D] [thread 3665] [35.0] [cxt 0] Processing packet received on port 1
+[01:54:49.884] [bmv2] [D] [thread 3665] [35.0] [cxt 0] Parser 'parser': start
+[01:54:49.884] [bmv2] [D] [thread 3665] [35.0] [cxt 0] Extracting header 'ethernet'
+[01:54:49.884] [bmv2] [D] [thread 3665] [35.0] [cxt 0] Parser state 'start': key is 86dd
+[01:54:49.884] [bmv2] [T] [thread 3665] [35.0] [cxt 0] Bytes parsed: 14
+[01:54:49.884] [bmv2] [D] [thread 3665] [35.0] [cxt 0] Extracting header 'ipv10'
+[01:54:49.884] [bmv2] [D] [thread 3665] [35.0] [cxt 0] Parser set: setting field 'scalars.tmp_0' from lookahead (0, 32), new value is 4278321152
+[01:54:49.884] [bmv2] [D] [thread 3665] [35.0] [cxt 0] Parser state 'parse_ipv10': key is ff020000
+[01:54:49.884] [bmv2] [T] [thread 3665] [35.0] [cxt 0] Bytes parsed: 38
+[01:54:49.884] [bmv2] [D] [thread 3665] [35.0] [cxt 0] Extracting header 'ipv6_addr'
+[01:54:49.884] [bmv2] [D] [thread 3665] [35.0] [cxt 0] Parser state 'parse_ipv6_addr' has no switch, going to default next state
+[01:54:49.884] [bmv2] [T] [thread 3665] [35.0] [cxt 0] Bytes parsed: 54
+[01:54:49.884] [bmv2] [D] [thread 3665] [35.0] [cxt 0] Parser 'parser': end
+[01:54:49.884] [bmv2] [D] [thread 3665] [35.0] [cxt 0] Pipeline 'ingress': start
+[01:54:49.884] [bmv2] [T] [thread 3665] [35.0] [cxt 0] ipv10_forward.p4(153) Condition "hdr.ipv6_addr.isValid()" is true
+[01:54:49.884] [bmv2] [T] [thread 3665] [35.0] [cxt 0] Applying table 'ipv6_lpm'
+[01:54:49.884] [bmv2] [D] [thread 3665] [35.0] [cxt 0] Looking up key:
+* ipv6_addr.dstAddr   : ff020000000000000000000000000002
+
+[01:54:49.884] [bmv2] [D] [thread 3665] [35.0] [cxt 0] Table 'ipv6_lpm': miss
+[01:54:49.884] [bmv2] [D] [thread 3665] [35.0] [cxt 0] Action entry is drop - 
+[01:54:49.884] [bmv2] [T] [thread 3665] [35.0] [cxt 0] Action drop
+[01:54:49.884] [bmv2] [T] [thread 3665] [35.0] [cxt 0] ipv10_forward.p4(110) Primitive mark_to_drop()
+[01:54:49.884] [bmv2] [T] [thread 3665] [35.0] [cxt 0] ipv10_forward.p4(156) Condition "hdr.ipv4_addr.isValid()" is false
+[01:54:49.884] [bmv2] [D] [thread 3665] [35.0] [cxt 0] Pipeline 'ingress': end
+[01:54:49.884] [bmv2] [D] [thread 3665] [35.0] [cxt 0] Egress port is 511
+[01:54:49.884] [bmv2] [D] [thread 3665] [35.0] [cxt 0] Dropping packet at the end of ingress
+[01:54:50.083] [bmv2] [D] [thread 3665] [36.0] [cxt 0] Processing packet received on port 2
+[01:54:50.083] [bmv2] [D] [thread 3665] [36.0] [cxt 0] Parser 'parser': start
+[01:54:50.083] [bmv2] [D] [thread 3665] [36.0] [cxt 0] Extracting header 'ethernet'
+[01:54:50.083] [bmv2] [D] [thread 3665] [36.0] [cxt 0] Parser state 'start': key is 86dd
+[01:54:50.083] [bmv2] [T] [thread 3665] [36.0] [cxt 0] Bytes parsed: 14
+[01:54:50.083] [bmv2] [D] [thread 3665] [36.0] [cxt 0] Extracting header 'ipv10'
+[01:54:50.083] [bmv2] [D] [thread 3665] [36.0] [cxt 0] Parser set: setting field 'scalars.tmp_0' from lookahead (0, 32), new value is 4278321152
+[01:54:50.083] [bmv2] [D] [thread 3665] [36.0] [cxt 0] Parser state 'parse_ipv10': key is ff020000
+[01:54:50.083] [bmv2] [T] [thread 3665] [36.0] [cxt 0] Bytes parsed: 38
+[01:54:50.083] [bmv2] [D] [thread 3665] [36.0] [cxt 0] Extracting header 'ipv6_addr'
+[01:54:50.083] [bmv2] [D] [thread 3665] [36.0] [cxt 0] Parser state 'parse_ipv6_addr' has no switch, going to default next state
+[01:54:50.083] [bmv2] [T] [thread 3665] [36.0] [cxt 0] Bytes parsed: 54
+[01:54:50.083] [bmv2] [D] [thread 3665] [36.0] [cxt 0] Parser 'parser': end
+[01:54:50.083] [bmv2] [D] [thread 3665] [36.0] [cxt 0] Pipeline 'ingress': start
+[01:54:50.083] [bmv2] [T] [thread 3665] [36.0] [cxt 0] ipv10_forward.p4(153) Condition "hdr.ipv6_addr.isValid()" is true
+[01:54:50.083] [bmv2] [T] [thread 3665] [36.0] [cxt 0] Applying table 'ipv6_lpm'
+[01:54:50.083] [bmv2] [D] [thread 3665] [36.0] [cxt 0] Looking up key:
+* ipv6_addr.dstAddr   : ff0200000000000000000000000000fb
+
+[01:54:50.083] [bmv2] [D] [thread 3665] [36.0] [cxt 0] Table 'ipv6_lpm': miss
+[01:54:50.083] [bmv2] [D] [thread 3665] [36.0] [cxt 0] Action entry is drop - 
+[01:54:50.083] [bmv2] [T] [thread 3665] [36.0] [cxt 0] Action drop
+[01:54:50.083] [bmv2] [T] [thread 3665] [36.0] [cxt 0] ipv10_forward.p4(110) Primitive mark_to_drop()
+[01:54:50.083] [bmv2] [T] [thread 3665] [36.0] [cxt 0] ipv10_forward.p4(156) Condition "hdr.ipv4_addr.isValid()" is false
+[01:54:50.083] [bmv2] [D] [thread 3665] [36.0] [cxt 0] Pipeline 'ingress': end
+[01:54:50.083] [bmv2] [D] [thread 3665] [36.0] [cxt 0] Egress port is 511
+[01:54:50.083] [bmv2] [D] [thread 3665] [36.0] [cxt 0] Dropping packet at the end of ingress
+[01:54:50.091] [bmv2] [D] [thread 3665] [37.0] [cxt 0] Processing packet received on port 1
+[01:54:50.091] [bmv2] [D] [thread 3665] [37.0] [cxt 0] Parser 'parser': start
+[01:54:50.091] [bmv2] [D] [thread 3665] [37.0] [cxt 0] Extracting header 'ethernet'
+[01:54:50.091] [bmv2] [D] [thread 3665] [37.0] [cxt 0] Parser state 'start': key is 86dd
+[01:54:50.091] [bmv2] [T] [thread 3665] [37.0] [cxt 0] Bytes parsed: 14
+[01:54:50.091] [bmv2] [D] [thread 3665] [37.0] [cxt 0] Extracting header 'ipv10'
+[01:54:50.091] [bmv2] [D] [thread 3665] [37.0] [cxt 0] Parser set: setting field 'scalars.tmp_0' from lookahead (0, 32), new value is 4278321152
+[01:54:50.091] [bmv2] [D] [thread 3665] [37.0] [cxt 0] Parser state 'parse_ipv10': key is ff020000
+[01:54:50.091] [bmv2] [T] [thread 3665] [37.0] [cxt 0] Bytes parsed: 38
+[01:54:50.091] [bmv2] [D] [thread 3665] [37.0] [cxt 0] Extracting header 'ipv6_addr'
+[01:54:50.091] [bmv2] [D] [thread 3665] [37.0] [cxt 0] Parser state 'parse_ipv6_addr' has no switch, going to default next state
+[01:54:50.091] [bmv2] [T] [thread 3665] [37.0] [cxt 0] Bytes parsed: 54
+[01:54:50.091] [bmv2] [D] [thread 3665] [37.0] [cxt 0] Parser 'parser': end
+[01:54:50.091] [bmv2] [D] [thread 3665] [37.0] [cxt 0] Pipeline 'ingress': start
+[01:54:50.091] [bmv2] [T] [thread 3665] [37.0] [cxt 0] ipv10_forward.p4(153) Condition "hdr.ipv6_addr.isValid()" is true
+[01:54:50.091] [bmv2] [T] [thread 3665] [37.0] [cxt 0] Applying table 'ipv6_lpm'
+[01:54:50.091] [bmv2] [D] [thread 3665] [37.0] [cxt 0] Looking up key:
+* ipv6_addr.dstAddr   : ff0200000000000000000000000000fb
+
+[01:54:50.091] [bmv2] [D] [thread 3665] [37.0] [cxt 0] Table 'ipv6_lpm': miss
+[01:54:50.091] [bmv2] [D] [thread 3665] [37.0] [cxt 0] Action entry is drop - 
+[01:54:50.091] [bmv2] [T] [thread 3665] [37.0] [cxt 0] Action drop
+[01:54:50.091] [bmv2] [T] [thread 3665] [37.0] [cxt 0] ipv10_forward.p4(110) Primitive mark_to_drop()
+[01:54:50.091] [bmv2] [T] [thread 3665] [37.0] [cxt 0] ipv10_forward.p4(156) Condition "hdr.ipv4_addr.isValid()" is false
+[01:54:50.091] [bmv2] [D] [thread 3665] [37.0] [cxt 0] Pipeline 'ingress': end
+[01:54:50.091] [bmv2] [D] [thread 3665] [37.0] [cxt 0] Egress port is 511
+[01:54:50.091] [bmv2] [D] [thread 3665] [37.0] [cxt 0] Dropping packet at the end of ingress
