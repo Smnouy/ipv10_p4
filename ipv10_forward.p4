@@ -33,10 +33,9 @@ header ipv6_addr_t{
 }
 
 header ipv4_addr_t{
-    bit<32>   zero;
-    bit<16>   asn;
-    bit<48>   mac;
     ip4Addr_t dstAddr;
+    bit<48>   mac;
+    bit<48>   zero;
 }
 
 struct metadata {
@@ -73,7 +72,7 @@ parser ParserImpl(packet_in packet,
 
     state parse_ipv10 {
         packet.extract(hdr.ipv10);
-        transition select(packet.lookahead<bit<32>>()){
+        transition select(packet.lookahead<ipv4_addr_t>().zero){
 	      0000: parse_ipv4_addr;
 	      default: parse_ipv6_addr;
 	}
