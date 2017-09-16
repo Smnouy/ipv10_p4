@@ -29,4 +29,9 @@ or
 ```
 The message will be received.
 
-5.Type exit to leave each xterm and the Mininet command line.
+5.Type 'exit' to leave each xterm and the Mininet command line.
+```
+mininet>exit
+./cleanup.sh
+```
+
