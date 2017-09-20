@@ -10,7 +10,7 @@ const bit<16> TYPE_IPV10 = 0x86DD;
 typedef bit<9>  egressSpec_t;
 typedef bit<48> macAddr_t;
 typedef bit<32> ip4Addr_t;
-typedef bit<128> ip6Addr_t;
+typedef bit<128> ip10Addr_t;
 
 header ethernet_t {
     macAddr_t dstAddr;
@@ -25,28 +25,24 @@ header ipv10_t {
     bit<16>   payload_length;
     bit<8>    next_header;
     bit<8>    hop_limit;
-    ip6Addr_t srcAddr;
+    ip10Addr_t srcAddr;
+    ip10Addr_t dstAddr;
 }
 
-header ipv6_addr_t{
-    ip6Addr_t dstAddr;
-}
-
-header ipv4_addr_t{
-    ip4Addr_t dstAddr;
-    bit<48>   mac;
-    bit<48>   zero;
+struct metadata_t{
+    bit<32>  match;
+    bit<48>  zero;   
 }
 
 struct metadata {
+    metadata_t metadata;
     /* empty */
 }
 
 struct headers {
     ethernet_t   ethernet;
     ipv10_t      ipv10;
-    ipv6_addr_t  ipv6_addr;
-    ipv4_addr_t  ipv4_addr;
+
 }
 
 /*************************************************************************
@@ -72,21 +68,9 @@ parser ParserImpl(packet_in packet,
 
     state parse_ipv10 {
         packet.extract(hdr.ipv10);
-        transition select(packet.lookahead<ipv4_addr_t>().zero){
-	      0000: parse_ipv4_addr;
-	      default: parse_ipv6_addr;
+	meta.metadata.match = hdr.ipv10.dstAddr[127:96];
+        transition accept;
 	}
-    }
-
-    state parse_ipv4_addr{
-	packet.extract(hdr.ipv4_addr);
-	transition accept;
-    }
-
-    state parse_ipv6_addr{
-	packet.extract(hdr.ipv6_addr);
-	transition accept;
-    }
 
 }
 
@@ -109,22 +93,24 @@ control ingress(inout headers hdr, inout metadata meta, inout standard_metadata_
         mark_to_drop();
     }
     
-    action ipv6_forward(macAddr_t dstAddr, egressSpec_t port) {
+   action ipv6_forward(macAddr_t dstAddr, egressSpec_t port) {
         standard_metadata.egress_spec = port;
         hdr.ethernet.srcAddr = hdr.ethernet.dstAddr;
         hdr.ethernet.dstAddr = dstAddr;
         hdr.ipv10.hop_limit = hdr.ipv10.hop_limit - 1;
     }
+
     action ipv4_forward(macAddr_t dstAddr, egressSpec_t port) {
         standard_metadata.egress_spec = port;
         hdr.ethernet.srcAddr = hdr.ethernet.dstAddr;
         hdr.ethernet.dstAddr = dstAddr;
         hdr.ipv10.hop_limit = hdr.ipv10.hop_limit - 1;
+	
     }
     
     table ipv6_lpm {
         key = {
-            hdr.ipv6_addr.dstAddr: lpm;
+            hdr.ipv10.dstAddr: lpm;
         }
         actions = {
             ipv6_forward;
@@ -137,22 +123,23 @@ control ingress(inout headers hdr, inout metadata meta, inout standard_metadata_
 
     table ipv4_lpm {
         key = {
-            hdr.ipv4_addr.dstAddr: lpm;
+            meta.metadata.match: lpm;
         }
         actions = {
             ipv4_forward;
             drop;
             NoAction;
+
         }
         size = 1024;
         default_action = NoAction();
     }
     
     apply {
-        if (hdr.ipv6_addr.isValid()) {
+        if (hdr.ipv10.isValid() && hdr.ipv10.dstAddr[47:0] != 0) {
             ipv6_lpm.apply();
         }
-	if (hdr.ipv4_addr.isValid()) {
+	if (hdr.ipv10.isValid() && hdr.ipv10.dstAddr[47:0] == 0) {
 	    ipv4_lpm.apply();
 	}
     }
@@ -175,8 +162,8 @@ control DeparserImpl(packet_out packet, in headers hdr) {
     apply {
         packet.emit(hdr.ethernet);
         packet.emit(hdr.ipv10);
-	packet.emit(hdr.ipv6_addr);	
-	packet.emit(hdr.ipv4_addr);	
+	//packet.emit(hdr.ipv6_addr);	
+	//packet.emit(hdr.ipv4_addr);	
     }
 }
 
